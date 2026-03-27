@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanking — Cat Litter Manufacturer | Factory Direct</title>
-    <meta name="description" content="Sanking is a cat litter manufacturer producing premium Carbon Fine Bentonite cat litter. Factory direct pricing, uncompromised quality. We don't just sell cat litter — we make it.">
-    <meta property="og:title" content="Sanking — Cat Litter Manufacturer | Factory Direct">
-    <meta property="og:description" content="We are the factory. Premium Carbon Fine Bentonite cat litter, manufactured in-house with full quality control. Best price, best quality — direct from the production line.">
+    <title>Sanking — Premium Cat Litter | Imported & Distributed by MDL Distribution</title>
+    <meta name="description" content="Sanking premium Carbon Fine Bentonite cat litter — manufactured in China to MDL's exact specifications, imported and distributed directly across Malaysia by MDL Distribution Sdn Bhd. No middlemen, best price.">
+    <meta property="og:title" content="Sanking — Premium Cat Litter by MDL Distribution">
+    <meta property="og:description" content="Manufactured in China to our exact specifications. Imported and distributed directly across Malaysia by MDL Distribution Sdn Bhd. Best price, best quality — no middlemen.">
     <meta property="og:image" content="img/factory-line.png">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -249,7 +249,50 @@
             font-weight: 500;
         }
 
-        /* ===== FACTORY / WHY FACTORY DIRECT ===== */
+        /* ===== ABOUT MDL SECTION ===== */
+        .about-section { background: var(--grey-50); }
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-text .section-subtitle {
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--grey-500);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .about-text p:last-child { margin-bottom: 0; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .about-highlight {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--grey-200);
+        }
+        .about-highlight h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--grey-900);
+            margin-bottom: 0.35rem;
+        }
+        .about-highlight p {
+            font-size: 0.82rem;
+            color: var(--grey-500);
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* ===== FACTORY / WHY DIRECT ===== */
         .factory-section { background: var(--white); }
         .factory-header {
             margin-bottom: 4rem;
@@ -675,6 +718,34 @@
             margin: 0 auto 2rem;
             text-align: center;
         }
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+        .contact-detail svg {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255,255,255,0.5);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .contact-detail a {
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s;
+        }
+        .contact-detail a:hover { color: #fff; }
         .contact-btn {
             display: inline-flex;
             align-items: center;
@@ -706,7 +777,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
             gap: 1.5rem;
         }
@@ -717,6 +788,25 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
+        .footer-brand-sub {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0;
+            text-transform: none;
+            margin-top: 0.25rem;
+        }
+        .footer-company {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.45);
+            max-width: 300px;
+        }
+        .footer-company a {
+            color: rgba(255,255,255,0.6);
+            transition: color 0.3s;
+        }
+        .footer-company a:hover { color: #fff; }
         .footer-links { display: flex; gap: 2rem; }
         .footer-links a {
             font-size: 0.8rem;
@@ -736,6 +826,8 @@
         @media (max-width: 968px) {
             .hero h1 { font-size: 3.2rem; }
             .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .about-inner { grid-template-columns: 1fr; }
+            .about-highlights { grid-template-columns: 1fr 1fr; }
             .factory-header { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .factory-header-img img { max-height: 280px; }
             .factory-grid { grid-template-columns: repeat(2, 1fr); }
@@ -779,6 +871,7 @@
             .section-title { font-size: 2rem; }
             .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .stat-value { font-size: 2rem; }
+            .about-highlights { grid-template-columns: 1fr; }
             .factory-header { grid-template-columns: 1fr; text-align: center; }
             .factory-header-img img { max-height: 220px; }
             .factory-grid { grid-template-columns: 1fr; }
@@ -805,6 +898,8 @@
             .qc-features li { text-align: left; }
             .qc-text .section-label, .qc-text .section-title, .qc-text .section-subtitle { text-align: left; }
             .qc-image img { max-height: 260px; }
+            .contact-details { gap: 1.25rem; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -829,11 +924,12 @@
     <div class="nav-inner">
         <a href="#" class="nav-logo">Sanking</a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#factory">Our Factory</a></li>
-            <li><a href="#process">Production</a></li>
+            <li><a href="#about">About MDL</a></li>
+            <li><a href="#why-direct">Why Direct</a></li>
+            <li><a href="#process">How It's Made</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#quality">Quality</a></li>
-            <li><a href="#distribution">Distribution</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -841,18 +937,18 @@
     </div>
 </nav>
 
-<!-- HERO — Factory production line -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-img">
         <img src="img/factory-line.png" alt="Sanking cat litter production line — automated packaging and conveyor system">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="hero-label">Cat Litter Manufacturer</span>
-        <h1>We don't just sell cat litter — we make it.</h1>
-        <p class="hero-tagline">Sanking is a manufacturer. Our automated production lines, rigorous quality control, and direct-from-factory model mean you get the best product at the best price — no middlemen, no markup.</p>
-        <a href="#factory" class="hero-cta">
-            See Our Factory
+        <span class="hero-label">Imported & Distributed by MDL Distribution</span>
+        <h1>Premium cat litter, manufactured to our exact specifications.</h1>
+        <p class="hero-tagline">Sanking is manufactured in our dedicated partner facility in China and imported directly by MDL Distribution Sdn Bhd — cutting out middlemen to deliver the best quality cat litter at the best price in Malaysia.</p>
+        <a href="#about" class="hero-cta">
+            Discover Our Story
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </a>
     </div>
@@ -863,11 +959,11 @@
     <div class="stats-inner">
         <div class="stat-item reveal">
             <div class="stat-value">10+ yrs</div>
-            <div class="stat-label">Manufacturing Experience</div>
+            <div class="stat-label">Industry Experience</div>
         </div>
         <div class="stat-item reveal reveal-delay-1">
             <div class="stat-value">100K+</div>
-            <div class="stat-label">Tonnes Produced</div>
+            <div class="stat-label">Tonnes Imported</div>
         </div>
         <div class="stat-item reveal reveal-delay-2">
             <div class="stat-value">99%</div>
@@ -875,19 +971,52 @@
         </div>
         <div class="stat-item reveal reveal-delay-3">
             <div class="stat-value">Direct</div>
-            <div class="stat-label">Factory to Customer</div>
+            <div class="stat-label">Factory to Malaysia</div>
         </div>
     </div>
 </div>
 
-<!-- WHY FACTORY DIRECT -->
-<section class="section factory-section" id="factory">
+<!-- ABOUT MDL -->
+<section class="section about-section" id="about">
+    <div class="section-inner">
+        <div class="about-inner reveal">
+            <div class="about-text">
+                <div class="section-label">About MDL Distribution</div>
+                <h2 class="section-title">The company behind Sanking.</h2>
+                <p class="section-subtitle">Sanking is a product of <strong>MDL Distribution Sdn Bhd</strong> — a privately owned distribution company headquartered in Shah Alam, Selangor, Malaysia.</p>
+                <p>With many years of experience in pet product importing and distribution, MDL sources the finest ingredients and partners with advanced manufacturing facilities overseas to produce the highest quality pet products for the Malaysian market.</p>
+                <p>We work directly with our dedicated manufacturing partner in China — setting the formulation, controlling the specifications, and importing directly. No middlemen, no unnecessary markup. Just premium cat litter, delivered efficiently to Malaysia.</p>
+            </div>
+            <div class="about-highlights">
+                <div class="about-highlight">
+                    <h4>Malaysian Owned</h4>
+                    <p>Privately owned and operated from Shah Alam, Selangor — serving the Malaysian market with local expertise.</p>
+                </div>
+                <div class="about-highlight">
+                    <h4>Direct Importer</h4>
+                    <p>We import directly from our manufacturing partner — no layers of distributors inflating costs.</p>
+                </div>
+                <div class="about-highlight">
+                    <h4>Pet Industry Experts</h4>
+                    <p>Years of experience in pet product importing, formulation, and distribution across Malaysia.</p>
+                </div>
+                <div class="about-highlight">
+                    <h4>Quality First</h4>
+                    <p>Every batch manufactured to MDL's exact specifications and quality standards before shipping.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY DIRECT IMPORT -->
+<section class="section factory-section" id="why-direct">
     <div class="section-inner">
         <div class="factory-header reveal">
             <div class="factory-header-text">
-                <div class="section-label">Why Factory Direct</div>
-                <h2 class="section-title">When you buy from the<br>manufacturer, everything<br>is better.</h2>
-                <p class="section-subtitle">We control every step — from raw material sourcing to the finished product on your shelf. No resellers inflating prices. No third parties cutting corners. Just the factory, and you.</p>
+                <div class="section-label">Why Direct Import</div>
+                <h2 class="section-title">When you cut out the<br>middlemen, everything<br>gets better.</h2>
+                <p class="section-subtitle">MDL works directly with our manufacturing partner in China — we set the formula, control quality specifications, and import directly to Malaysia. No resellers inflating prices. No third parties cutting corners. Just the manufacturer, MDL, and you.</p>
             </div>
             <div class="factory-header-img">
                 <img src="img/combo-mockup.png" alt="Sanking Carbon Fine cat litter product range" loading="lazy">
@@ -896,11 +1025,11 @@
         <div class="factory-grid reveal">
             <div class="factory-card">
                 <div class="factory-icon">
-                    <!-- Factory/building icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 21h18M3 21V7l6 4V7l6 4V3h6v18"/></svg>
+                    <!-- Globe/world icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
-                <h3>We Are the Source</h3>
-                <p>Not a brand that outsources manufacturing. Not a distributor with a logo. We own the factory, the machinery, and the formula. Every bag is made under our roof.</p>
+                <h3>World-Class Manufacturing</h3>
+                <p>Manufactured in China — the global leader in bentonite cat litter production. Advanced technology, massive scale, and cost efficiency that no other region can match.</p>
             </div>
             <div class="factory-card">
                 <div class="factory-icon">
@@ -908,15 +1037,15 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </div>
                 <h3>Best Price, Guaranteed</h3>
-                <p>No middlemen. No distributor margins. No retailer markups layered on top. When you buy factory-direct, you pay for the product — not the supply chain.</p>
+                <p>No middlemen. No distributor layers. No retailer markups stacked on top. MDL imports directly from the factory — you pay for the product, not the supply chain.</p>
             </div>
             <div class="factory-card">
                 <div class="factory-icon">
                     <!-- Shield/quality icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <h3>Uncompromised Quality</h3>
-                <p>We test every batch. We control every ingredient. When you're the manufacturer, quality isn't a promise — it's a process you run yourself, every single day.</p>
+                <h3>MDL-Controlled Quality</h3>
+                <p>We don't just buy off the shelf. MDL sets the formulation, defines the specifications, and verifies every batch before it ships. Our name is on the bag — we own the quality.</p>
             </div>
             <div class="factory-card">
                 <div class="factory-icon">
@@ -924,7 +1053,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                 </div>
                 <h3>Advanced Technology</h3>
-                <p>Automated production lines, precision mixing systems, and computerized packaging ensure every bag meets exact specifications. Industrial scale with artisan attention to detail.</p>
+                <p>China's manufacturing infrastructure offers automated production lines, precision mixing systems, and computerized packaging — industrial scale with exacting attention to detail.</p>
             </div>
             <div class="factory-card">
                 <div class="factory-icon">
@@ -932,15 +1061,15 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                 </div>
                 <h3>Shorter Supply Chain</h3>
-                <p>Factory to warehouse to you. Fewer stops means fresher product, lower cost, and faster availability. We cut the complexity so you don't pay for it.</p>
+                <p>Factory to MDL warehouse to you. Fewer stops means fresher product, lower cost, and faster availability. We cut the complexity so you don't pay for it.</p>
             </div>
             <div class="factory-card">
                 <div class="factory-icon">
                     <!-- Trending up icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                 </div>
-                <h3>Capacity for Growth</h3>
-                <p>Our production facility is built for scale. Whether you need 100 bags or 100,000 — we have the capacity, the systems, and the infrastructure to deliver.</p>
+                <h3>Scale & Capacity</h3>
+                <p>Our manufacturing partner's facility is built for scale. Whether you need 100 bags or 100,000 — we have the capacity, the systems, and the logistics to deliver across Malaysia.</p>
             </div>
         </div>
     </div>
@@ -950,30 +1079,30 @@
 <section class="process-section" id="process">
     <div class="process-inner">
         <div class="process-header reveal">
-            <div class="section-label">Production Process</div>
-            <h2 class="section-title">From raw mineral<br>to finished product.</h2>
-            <p class="section-subtitle">Every bag of Sanking cat litter goes through a precise, multi-stage manufacturing process — engineered for consistency, quality, and performance.</p>
+            <div class="section-label">How It's Made</div>
+            <h2 class="section-title">From raw mineral<br>to your doorstep.</h2>
+            <p class="section-subtitle">Every bag of Sanking cat litter is manufactured in our partner facility in China to MDL's precise specifications — then imported directly to Malaysia.</p>
         </div>
         <div class="process-steps reveal">
             <div class="process-step">
                 <div class="step-number">01</div>
-                <h3>Raw Material Selection</h3>
-                <p>Premium bentonite clay is sourced and tested for purity, mineral content, and absorption capacity before entering our facility.</p>
+                <h3>MDL Sets the Specs</h3>
+                <p>MDL defines the formulation, grain size, carbon infusion levels, and quality benchmarks. Our manufacturing partner produces to these exact specifications.</p>
             </div>
             <div class="process-step reveal-delay-1">
                 <div class="step-number">02</div>
-                <h3>Precision Processing</h3>
-                <p>Advanced granulation and carbon infusion technology creates the optimal grain size and activated carbon distribution for maximum odor control.</p>
+                <h3>Precision Manufacturing</h3>
+                <p>Advanced granulation and carbon infusion technology in our Chinese partner facility creates the optimal grain size and activated carbon distribution for maximum odor control.</p>
             </div>
             <div class="process-step reveal-delay-2">
                 <div class="step-number">03</div>
-                <h3>Quality Testing</h3>
-                <p>Every batch undergoes rigorous lab testing — clumping speed, absorption rate, dust levels, moisture content — before approval for packaging.</p>
+                <h3>Quality Verification</h3>
+                <p>Every batch undergoes rigorous testing — clumping speed, absorption rate, dust levels, moisture content — verified against MDL's standards before shipping.</p>
             </div>
             <div class="process-step reveal-delay-3">
                 <div class="step-number">04</div>
-                <h3>Automated Packaging</h3>
-                <p>Computer-controlled filling and sealing lines ensure precise weight, airtight packaging, and consistent product quality in every single bag.</p>
+                <h3>Direct Import to Malaysia</h3>
+                <p>Shipped directly from the factory to MDL's warehouse in Shah Alam. No intermediaries, no unnecessary handling. Straight to our distribution network across Malaysia.</p>
             </div>
         </div>
     </div>
@@ -984,27 +1113,27 @@
     <div class="section-inner">
         <div class="products-header reveal">
             <div class="section-label">Our Products</div>
-            <h2 class="section-title">What we manufacture.</h2>
-            <p class="section-subtitle">Three sizes, one uncompromising standard. Every bag is produced in our facility using our proprietary Carbon Fine Bentonite formula.</p>
+            <h2 class="section-title">Sanking Carbon Fine Bentonite.</h2>
+            <p class="section-subtitle">Three sizes, one uncompromising standard. Every bag is manufactured to MDL's proprietary Carbon Fine Bentonite formula and imported directly to Malaysia.</p>
         </div>
         <div class="products-showcase">
             <div class="product-item reveal">
                 <img src="img/7l-mockup.png" alt="Sanking 7L Cat Litter" loading="lazy">
                 <span class="product-tag">7 Litres</span>
                 <h3>Sanking 7L</h3>
-                <p>Compact format, ideal for single-cat households and retail distribution. Same factory-grade formula, precision-filled to exact weight specifications.</p>
+                <p>Compact format, ideal for single-cat households and retail distribution. Same premium formula, precision-filled to exact weight specifications.</p>
             </div>
             <div class="product-item reveal reveal-delay-1">
                 <img src="img/10l-sanmate.png" alt="Sanking 10L Cat Litter" loading="lazy">
                 <span class="product-tag">10 Litres</span>
                 <h3>Sanking 10L</h3>
-                <p>Our most popular format. Carbon Fine Bentonite formula in the sweet spot between value and convenience — the workhorse of our production line.</p>
+                <p>Our most popular format. Carbon Fine Bentonite formula in the sweet spot between value and convenience — the workhorse of the Sanking range.</p>
             </div>
             <div class="product-item reveal reveal-delay-2">
                 <img src="img/20l-mockup.png" alt="Sanking 20L Cat Litter" loading="lazy">
                 <span class="product-tag">20 Litres</span>
                 <h3>Sanking 20L</h3>
-                <p>Maximum value format for multi-cat households, breeders, and bulk buyers. Engineered for the same consistency at higher volume — economy of scale, passed on to you.</p>
+                <p>Maximum value format for multi-cat households, breeders, and bulk buyers. Economy of scale from direct import, passed on to you.</p>
             </div>
         </div>
     </div>
@@ -1067,21 +1196,22 @@
         <div class="qc-inner">
             <div class="qc-text reveal">
                 <div class="section-label">Quality Assurance</div>
-                <h2 class="section-title">Factory-level quality control you can trust.</h2>
-                <p class="section-subtitle">Because we manufacture in-house, we control quality at every stage — not just the end result. This is what factory-direct really means.</p>
+                <h2 class="section-title">MDL-grade quality control at every step.</h2>
+                <p class="section-subtitle">MDL sets the specifications. Our manufacturing partner in China executes to those standards. Every batch is verified before it leaves the factory — and again when it arrives in Malaysia.</p>
                 <ul class="qc-features">
+                    <li>Formulation and specifications defined by MDL Distribution</li>
                     <li>Raw material testing before production begins</li>
-                    <li>In-line quality monitoring during processing</li>
+                    <li>In-line quality monitoring during manufacturing</li>
                     <li>Batch-level lab testing for absorption, clumping, and dust</li>
                     <li>99% dust-free guarantee through nano-refined processing</li>
                     <li>Anti-bacterial agents integrated at the formulation stage</li>
                     <li>Automated weight verification on every bag</li>
                     <li>Consistent 3-second clumping performance across all batches</li>
-                    <li>10+ years of manufacturing refinement and optimisation</li>
+                    <li>Final quality check upon arrival at MDL's Malaysian warehouse</li>
                 </ul>
             </div>
             <div class="qc-image reveal">
-                <img src="img/combo-mockup.png" alt="Sanking product range — manufactured in-house" loading="lazy">
+                <img src="img/combo-mockup.png" alt="Sanking product range — imported by MDL Distribution" loading="lazy">
             </div>
         </div>
     </div>
@@ -1092,8 +1222,8 @@
     <div class="section-inner">
         <div class="dist-content reveal">
             <div class="section-label">Distribution</div>
-            <h2 class="section-title">Available through our partners.</h2>
-            <p class="section-subtitle">We manufacture. Our distribution partners make sure Sanking reaches cat owners across Malaysia — online and in-store.</p>
+            <h2 class="section-title">Available across Malaysia.</h2>
+            <p class="section-subtitle">MDL Distribution imports and distributes Sanking across Malaysia — online and through our network of retail partners nationwide.</p>
             <div class="dist-channels">
                 <a href="#" class="channel-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -1108,18 +1238,32 @@
                     Pet Stores Nationwide
                 </a>
             </div>
-            <p class="dist-note">Interested in becoming a distributor or retail partner? Contact us for wholesale enquiries.</p>
+            <p class="dist-note">Interested in becoming a distributor or retail partner? <a href="#contact" style="color: var(--grey-600); text-decoration: underline;">Contact MDL Distribution</a> for wholesale enquiries.</p>
         </div>
     </div>
 </section>
 
 <!-- CONTACT CTA -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
     <div class="contact-inner reveal">
-        <div class="section-label">Partner With Us</div>
-        <h2 class="section-title">Looking for a manufacturer?</h2>
-        <p class="section-subtitle">Whether you're a distributor, retailer, or looking for OEM/private label cat litter production — we have the capacity and expertise to deliver.</p>
-        <a href="mailto:info@sanking.my" class="contact-btn">
+        <div class="section-label">Partner With MDL</div>
+        <h2 class="section-title">Wholesale & distribution enquiries.</h2>
+        <p class="section-subtitle">Whether you're a distributor, retailer, or looking for bulk cat litter supply — MDL Distribution has the capacity, expertise, and direct import pricing to deliver.</p>
+        <div class="contact-details">
+            <div class="contact-detail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+60109320118">+6010-932 0118</a>
+            </div>
+            <div class="contact-detail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:enquiry@mdl.com.my">enquiry@mdl.com.my</a>
+            </div>
+            <div class="contact-detail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <a href="https://mdl.com.my" target="_blank" rel="noopener">mdl.com.my</a>
+            </div>
+        </div>
+        <a href="mailto:enquiry@mdl.com.my" class="contact-btn">
             Get in Touch
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -1129,16 +1273,26 @@
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner">
-        <div class="footer-brand">Sanking</div>
+        <div>
+            <div class="footer-brand">Sanking</div>
+            <div class="footer-brand-sub">A product of MDL Distribution Sdn Bhd</div>
+        </div>
+        <div class="footer-company">
+            <strong style="color: rgba(255,255,255,0.7);">MDL Distribution Sdn Bhd</strong><br>
+            35/135, Alam Impian 13, Jalan Raja Bot,<br>
+            Section 35, 40460 Shah Alam, Selangor<br>
+            <a href="tel:+60109320118">+6010-932 0118</a> · <a href="mailto:enquiry@mdl.com.my">enquiry@mdl.com.my</a><br>
+            <a href="https://mdl.com.my" target="_blank" rel="noopener">mdl.com.my</a>
+        </div>
         <div class="footer-links">
-            <a href="#factory">Factory</a>
-            <a href="#process">Production</a>
+            <a href="#about">About MDL</a>
+            <a href="#why-direct">Why Direct</a>
             <a href="#products">Products</a>
             <a href="#quality">Quality</a>
-            <a href="#distribution">Distribution</a>
+            <a href="#contact">Contact</a>
         </div>
         <div class="footer-copy">
-            &copy; 2026 Sanking. Cat Litter Manufacturer — Premium Carbon Fine Bentonite. All rights reserved.
+            &copy; 2026 Sanking — a product of MDL Distribution Sdn Bhd. Premium Carbon Fine Bentonite Cat Litter. All rights reserved.
         </div>
     </div>
 </footer>
