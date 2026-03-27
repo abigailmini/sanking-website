@@ -251,7 +251,24 @@
 
         /* ===== FACTORY / WHY FACTORY DIRECT ===== */
         .factory-section { background: var(--white); }
-        .factory-header { margin-bottom: 4rem; }
+        .factory-header {
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+        }
+        .factory-header-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .factory-header-img img {
+            max-height: 340px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.10));
+        }
         .factory-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -646,6 +663,8 @@
         @media (max-width: 968px) {
             .hero h1 { font-size: 3.2rem; }
             .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .factory-header { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .factory-header-img img { max-height: 280px; }
             .factory-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .products-showcase { grid-template-columns: repeat(2, 1fr); }
@@ -687,6 +706,8 @@
             .section-title { font-size: 2rem; }
             .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .stat-value { font-size: 2rem; }
+            .factory-header { grid-template-columns: 1fr; text-align: center; }
+            .factory-header-img img { max-height: 220px; }
             .factory-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: 1fr; }
             .products-showcase { grid-template-columns: 1fr; }
@@ -777,9 +798,14 @@
 <section class="section factory-section" id="factory">
     <div class="section-inner">
         <div class="factory-header reveal">
-            <div class="section-label">Why Factory Direct</div>
-            <h2 class="section-title">When you buy from the<br>manufacturer, everything<br>is better.</h2>
-            <p class="section-subtitle">We control every step — from raw material sourcing to the finished product on your shelf. No resellers inflating prices. No third parties cutting corners. Just the factory, and you.</p>
+            <div class="factory-header-text">
+                <div class="section-label">Why Factory Direct</div>
+                <h2 class="section-title">When you buy from the<br>manufacturer, everything<br>is better.</h2>
+                <p class="section-subtitle">We control every step — from raw material sourcing to the finished product on your shelf. No resellers inflating prices. No third parties cutting corners. Just the factory, and you.</p>
+            </div>
+            <div class="factory-header-img">
+                <img src="img/combo-mockup.png" alt="Sanking Carbon Fine cat litter product range" loading="lazy">
+            </div>
         </div>
         <div class="factory-grid reveal">
             <div class="factory-card">
