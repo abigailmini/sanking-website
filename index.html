@@ -433,49 +433,127 @@
             line-height: 1.7;
         }
 
-        /* ===== GALLERY (Square Grid) ===== */
-        .gallery-section { background: var(--white); }
-        .gallery-dots { display: none; }
-        .gallery-header { margin-bottom: 3.5rem; }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-        .gallery-item {
-            border-radius: 12px;
+        /* ===== GALLERY CAROUSEL ===== */
+        .gallery-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #111 100%);
+            padding: 5rem 0;
             overflow: hidden;
-            position: relative;
-            aspect-ratio: 1 / 1;
         }
-        .gallery-item img {
+        .gallery-section .section-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+        .gallery-header { margin-bottom: 3rem; }
+        .gallery-header .section-label { color: var(--grey-400); }
+        .gallery-header .section-title { color: #fff; }
+        .gallery-header .section-subtitle { color: rgba(255,255,255,0.6); }
+
+        .gallery-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+        }
+        .gallery-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .gallery-slide {
+            flex: 0 0 100%;
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+        .gallery-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 6s ease-out;
         }
-        .gallery-item:hover img {
-            transform: scale(1.04);
+        .gallery-slide.active img {
+            transform: scale(1.05);
         }
-        .gallery-item .gallery-caption {
+        .gallery-slide .gallery-caption {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.5rem 1rem 1rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+            padding: 2.5rem 2rem 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.4s;
+            transform: translateY(10px);
+            transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
         }
-        .gallery-item:hover .gallery-caption {
+        .gallery-slide.active .gallery-caption {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Arrows */
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        .gallery-carousel:hover .gallery-arrow { opacity: 1; }
+        .gallery-arrow:hover { background: rgba(255,255,255,0.3); transform: translateY(-50%) scale(1.1); }
+        .gallery-arrow--prev { left: 16px; }
+        .gallery-arrow--next { right: 16px; }
+        .gallery-arrow svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* Dots */
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1.75rem;
+        }
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .gallery-dot.active {
+            background: #fff;
+            transform: scale(1.25);
+        }
+        .gallery-dot:hover { background: rgba(255,255,255,0.5); }
+
+        /* Counter */
+        .gallery-counter {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            font-weight: 500;
         }
 
         /* ===== QC SECTION ===== */
@@ -674,7 +752,8 @@
             .qc-image img { max-height: 320px; }
             .qc-text .section-subtitle { margin: 0 auto; }
             .qc-features { align-items: center; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-carousel { border-radius: 12px; }
+            .gallery-arrow { opacity: 1; width: 42px; height: 42px; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -710,49 +789,13 @@
                 max-width: none;
             }
             .product-item img { height: 200px; }
-            /* Gallery carousel on mobile */
-            .gallery-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                gap: 0;
-                padding: 0 1rem;
-                scrollbar-width: none;
-            }
-            .gallery-grid::-webkit-scrollbar { display: none; }
-            .gallery-item {
-                flex: 0 0 85%;
-                scroll-snap-align: center;
-                margin-right: 0.75rem;
-                border-radius: 12px;
-                aspect-ratio: 1 / 1;
-            }
-            .gallery-item:last-child { margin-right: 0; }
-            .gallery-item .gallery-caption {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .gallery-dots {
-                display: flex;
-                justify-content: center;
-                gap: 0.5rem;
-                margin-top: 1.25rem;
-            }
-            .gallery-dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: var(--grey-300, #ccc);
-                border: none;
-                padding: 0;
-                cursor: pointer;
-                transition: background 0.3s, transform 0.3s;
-            }
-            .gallery-dot.active {
-                background: var(--primary, #222);
-                transform: scale(1.3);
-            }
+            /* Gallery carousel mobile */
+            .gallery-section { padding: 3.5rem 0; }
+            .gallery-carousel { border-radius: 10px; }
+            .gallery-arrow { opacity: 1; width: 38px; height: 38px; background: rgba(0,0,0,0.4); }
+            .gallery-arrow--prev { left: 10px; }
+            .gallery-arrow--next { right: 10px; }
+            .gallery-slide .gallery-caption { opacity: 1; transform: translateY(0); }
             .qc-image img { max-height: 260px; }
         }
 
@@ -959,45 +1002,54 @@
     </div>
 </section>
 
-<!-- GALLERY — Square Grid -->
-<section class="section gallery-section" id="gallery">
+<!-- GALLERY — Full-Width Carousel -->
+<section class="gallery-section" id="gallery">
     <div class="section-inner">
         <div class="gallery-header reveal">
             <div class="section-label">Product Details</div>
             <h2 class="section-title">Built to perform.</h2>
             <p class="section-subtitle">Japanese Carbon Fine Bentonite technology — engineered in every grain. Here's what sets our product apart from the rest.</p>
         </div>
-        <div class="gallery-grid reveal" id="galleryGrid">
-            <div class="gallery-item">
-                <img src="img/fa-07.jpg" alt="Sanking #1 best selling cat litter" loading="lazy">
-                <div class="gallery-caption">#1 Cat Litter in Malaysia</div>
+        <div class="gallery-carousel reveal" id="galleryCarousel">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-slide">
+                    <img src="img/fa-07.jpg" alt="Sanking #1 best selling cat litter" loading="lazy">
+                    <div class="gallery-caption">#1 Cat Litter in Malaysia</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-01.jpg" alt="Complete Sanking product range" loading="lazy">
+                    <div class="gallery-caption">The Complete Range</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-02.jpg" alt="6-in-1 performance features" loading="lazy">
+                    <div class="gallery-caption">6-in-1 Performance</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-03.jpg" alt="Easy scoop cleanup" loading="lazy">
+                    <div class="gallery-caption">Instant Hard Clumping</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-04.jpg" alt="Anti-bacterial protection" loading="lazy">
+                    <div class="gallery-caption">Anti-Bacterial Formula</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-05.jpg" alt="Premium mineral sand" loading="lazy">
+                    <div class="gallery-caption">Premium Mineral Sand</div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="img/fa-06.jpg" alt="Product specifications" loading="lazy">
+                    <div class="gallery-caption">Precision Engineered</div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="img/fa-01.jpg" alt="Complete Sanking product range" loading="lazy">
-                <div class="gallery-caption">The Complete Range</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/fa-02.jpg" alt="6-in-1 performance features" loading="lazy">
-                <div class="gallery-caption">6-in-1 Performance</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/fa-03.jpg" alt="Easy scoop cleanup" loading="lazy">
-                <div class="gallery-caption">Instant Hard Clumping</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/fa-04.jpg" alt="Anti-bacterial protection" loading="lazy">
-                <div class="gallery-caption">Anti-Bacterial Formula</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/fa-05.jpg" alt="Premium mineral sand" loading="lazy">
-                <div class="gallery-caption">Premium Mineral Sand</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/fa-06.jpg" alt="Product specifications" loading="lazy">
-                <div class="gallery-caption">Precision Engineered</div>
-            </div>
+            <button class="gallery-arrow gallery-arrow--prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="gallery-arrow gallery-arrow--next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
         </div>
         <div class="gallery-dots" id="galleryDots"></div>
+        <div class="gallery-counter" id="galleryCounter">1 / 7</div>
     </div>
 </section>
 
@@ -1106,43 +1158,106 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 <script>
-// Gallery carousel dots (mobile only)
+// Gallery Carousel — full-width slider with auto-play, touch, arrows, dots
 (function() {
-    const grid = document.getElementById('galleryGrid');
-    const dotsContainer = document.getElementById('galleryDots');
-    if (!grid || !dotsContainer) return;
-    const items = grid.querySelectorAll('.gallery-item');
-    items.forEach(function(_, i) {
-        const dot = document.createElement('button');
+    var carousel = document.getElementById('galleryCarousel');
+    var track = document.getElementById('galleryTrack');
+    var dotsContainer = document.getElementById('galleryDots');
+    var counter = document.getElementById('galleryCounter');
+    if (!carousel || !track) return;
+
+    var slides = track.querySelectorAll('.gallery-slide');
+    var total = slides.length;
+    var current = 0;
+    var autoInterval = null;
+    var autoDelay = 4500;
+    var isHovered = false;
+    var touchStartX = 0;
+    var touchEndX = 0;
+    var touchStartY = 0;
+    var isDragging = false;
+
+    // Build dots
+    for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
         dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.addEventListener('click', function() {
-            items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
+        (function(idx) {
+            dot.addEventListener('click', function() { goTo(idx); startAuto(); });
+        })(i);
         dotsContainer.appendChild(dot);
-    });
+    }
     var dots = dotsContainer.querySelectorAll('.gallery-dot');
-    var ticking = false;
-    grid.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                var scrollLeft = grid.scrollLeft;
-                var gridWidth = grid.offsetWidth;
-                var closest = 0;
-                var minDist = Infinity;
-                items.forEach(function(item, i) {
-                    var center = item.offsetLeft + item.offsetWidth / 2 - grid.offsetLeft;
-                    var dist = Math.abs(center - scrollLeft - gridWidth / 2);
-                    if (dist < minDist) { minDist = dist; closest = i; }
-                });
-                dots.forEach(function(d, i) {
-                    d.classList.toggle('active', i === closest);
-                });
-                ticking = false;
-            });
-            ticking = true;
+
+    function goTo(idx) {
+        if (idx < 0) idx = total - 1;
+        if (idx >= total) idx = 0;
+        current = idx;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        // Update active states
+        for (var j = 0; j < total; j++) {
+            slides[j].classList.toggle('active', j === current);
+            dots[j].classList.toggle('active', j === current);
         }
+        if (counter) counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    // Arrows
+    var prevBtn = carousel.querySelector('.gallery-arrow--prev');
+    var nextBtn = carousel.querySelector('.gallery-arrow--next');
+    if (prevBtn) prevBtn.addEventListener('click', function() { prev(); startAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { next(); startAuto(); });
+
+    // Auto-play
+    function startAuto() {
+        stopAuto();
+        autoInterval = setInterval(function() {
+            if (!isHovered) next();
+        }, autoDelay);
+    }
+    function stopAuto() {
+        if (autoInterval) { clearInterval(autoInterval); autoInterval = null; }
+    }
+
+    // Pause on hover (desktop)
+    carousel.addEventListener('mouseenter', function() { isHovered = true; });
+    carousel.addEventListener('mouseleave', function() { isHovered = false; });
+
+    // Touch / swipe support
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+        isDragging = true;
+        stopAuto();
+    }, { passive: true });
+    carousel.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        touchEndX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) next(); else prev();
+        }
+        startAuto();
     });
+
+    // Keyboard
+    document.addEventListener('keydown', function(e) {
+        var rect = carousel.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) return;
+        if (e.key === 'ArrowLeft') { prev(); startAuto(); }
+        if (e.key === 'ArrowRight') { next(); startAuto(); }
+    });
+
+    // Init
+    goTo(0);
+    startAuto();
 })();
 </script>
 
