@@ -347,19 +347,26 @@
             line-height: 1.7;
         }
 
-        /* ===== FEATURES ===== */
+        /* ===== FEATURES (Pyramid Layout) ===== */
         .features-section { background: var(--white); }
         .features-header { margin-bottom: 3.5rem; }
-        .features-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto auto;
+        .features-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 1rem;
+        }
+        .pyramid-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
         }
         .feat-card {
             border-radius: 16px;
             overflow: hidden;
             position: relative;
+            aspect-ratio: 1 / 1;
         }
         .feat-card img {
             width: 100%;
@@ -370,23 +377,20 @@
         .feat-card:hover img {
             transform: scale(1.04);
         }
-        /* Hero feature spans full width */
-        .feat-hero {
-            grid-column: 1 / -1;
-            aspect-ratio: 21 / 9;
+        /* Row 1: 1 big square */
+        .pyramid-row-1 .feat-card {
+            width: 50%;
+            max-width: 420px;
         }
-        .feat-half {
-            aspect-ratio: 4 / 3;
+        /* Row 2: 2 medium squares */
+        .pyramid-row-2 .feat-card {
+            width: calc(33.333% - 0.5rem);
+            max-width: 320px;
         }
-        /* Bottom row: 3 items */
-        .features-bottom {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .features-bottom .feat-card {
-            aspect-ratio: 4 / 3;
+        /* Row 3: 3 small squares */
+        .pyramid-row-3 .feat-card {
+            width: calc(25% - 0.667rem);
+            max-width: 240px;
         }
 
         /* ===== COMBO SECTION ===== */
@@ -531,7 +535,6 @@
             .combo-image img { max-height: 320px; }
             .combo-text .section-subtitle { margin: 0 auto; }
             .combo-features { align-items: center; }
-            .features-bottom { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -564,9 +567,10 @@
                 max-width: none;
             }
             .product-item img { height: 200px; }
-            .features-layout { grid-template-columns: 1fr; }
-            .feat-hero { grid-column: auto; aspect-ratio: 4/3; }
-            .features-bottom { grid-template-columns: 1fr; }
+            .pyramid-row { flex-wrap: wrap; }
+            .pyramid-row-1 .feat-card { width: 80%; }
+            .pyramid-row-2 .feat-card { width: calc(50% - 0.5rem); }
+            .pyramid-row-3 .feat-card { width: calc(50% - 0.5rem); }
             .combo-image img { max-height: 260px; }
         }
 
@@ -723,31 +727,33 @@
             <h2 class="section-title">See the difference.</h2>
             <p class="section-subtitle">Premium ingredients and Japanese engineering in every grain.</p>
         </div>
-        <div class="features-layout reveal">
-            <div class="feat-card feat-hero">
-                <img src="img/fa-01.jpg" alt="Sanking product overview" loading="lazy">
+        <div class="features-pyramid reveal">
+            <!-- Row 1: 1 big square — Best Seller -->
+            <div class="pyramid-row pyramid-row-1">
+                <div class="feat-card">
+                    <img src="img/fa-07.jpg" alt="No.1 best selling product" loading="lazy">
+                </div>
             </div>
-            <div class="feat-card feat-half">
-                <img src="img/fa-02.jpg" alt="Key features" loading="lazy">
+            <!-- Row 2: 2 medium squares -->
+            <div class="pyramid-row pyramid-row-2">
+                <div class="feat-card">
+                    <img src="img/fa-01.jpg" alt="Sanking product overview" loading="lazy">
+                </div>
+                <div class="feat-card">
+                    <img src="img/fa-02.jpg" alt="Key features" loading="lazy">
+                </div>
             </div>
-            <div class="feat-card feat-half">
-                <img src="img/fa-03.jpg" alt="Easy clean up" loading="lazy">
-            </div>
-        </div>
-        <div class="features-bottom reveal">
-            <div class="feat-card">
-                <img src="img/fa-04.jpg" alt="Anti-bacterial protection" loading="lazy">
-            </div>
-            <div class="feat-card">
-                <img src="img/fa-05.jpg" alt="Ultimate mineral sand" loading="lazy">
-            </div>
-            <div class="feat-card">
-                <img src="img/fa-06.jpg" alt="Virtually dust free" loading="lazy">
-            </div>
-        </div>
-        <div class="features-bottom reveal" style="margin-top: 1rem;">
-            <div class="feat-card" style="grid-column: 1 / -1; aspect-ratio: 21/9;">
-                <img src="img/fa-07.jpg" alt="No.1 best selling product" loading="lazy">
+            <!-- Row 3: 3 small squares -->
+            <div class="pyramid-row pyramid-row-3">
+                <div class="feat-card">
+                    <img src="img/fa-03.jpg" alt="Easy clean up" loading="lazy">
+                </div>
+                <div class="feat-card">
+                    <img src="img/fa-04.jpg" alt="Anti-bacterial protection" loading="lazy">
+                </div>
+                <div class="feat-card">
+                    <img src="img/fa-05.jpg" alt="Ultimate mineral sand" loading="lazy">
+                </div>
             </div>
         </div>
     </div>
