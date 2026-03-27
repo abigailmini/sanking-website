@@ -433,20 +433,19 @@
             line-height: 1.7;
         }
 
-        /* ===== GALLERY (Rectangle Grid) ===== */
+        /* ===== GALLERY (Square Grid) ===== */
         .gallery-section { background: var(--white); }
         .gallery-header { margin-bottom: 3.5rem; }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto;
             gap: 1rem;
         }
         .gallery-item {
             border-radius: 12px;
             overflow: hidden;
             position: relative;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 1 / 1;
         }
         .gallery-item img {
             width: 100%;
@@ -476,11 +475,6 @@
         .gallery-item:hover .gallery-caption {
             opacity: 1;
             transform: translateY(0);
-        }
-        /* First item spans 2 columns */
-        .gallery-item.wide {
-            grid-column: span 2;
-            aspect-ratio: 32 / 10;
         }
 
         /* ===== QC SECTION ===== */
@@ -680,7 +674,6 @@
             .qc-text .section-subtitle { margin: 0 auto; }
             .qc-features { align-items: center; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-item.wide { grid-column: span 2; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -716,8 +709,7 @@
                 max-width: none;
             }
             .product-item img { height: 200px; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-item.wide { grid-column: span 1; aspect-ratio: 16/10; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .qc-image img { max-height: 260px; }
         }
 
@@ -924,7 +916,7 @@
     </div>
 </section>
 
-<!-- GALLERY — Rectangle Grid -->
+<!-- GALLERY — Square Grid -->
 <section class="section gallery-section" id="gallery">
     <div class="section-inner">
         <div class="gallery-header reveal">
@@ -933,7 +925,7 @@
             <p class="section-subtitle">Japanese Carbon Fine Bentonite technology — engineered in every grain. Here's what sets our product apart from the rest.</p>
         </div>
         <div class="gallery-grid reveal">
-            <div class="gallery-item wide">
+            <div class="gallery-item">
                 <img src="img/fa-07.jpg" alt="Sanking #1 best selling cat litter" loading="lazy">
                 <div class="gallery-caption">#1 Cat Litter in Malaysia</div>
             </div>
