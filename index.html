@@ -747,11 +747,11 @@
                 justify-self: center;
                 width: 100%;
             }
-            .qc-inner { grid-template-columns: 1fr; text-align: center; }
-            .qc-image { order: -1; }
+            .qc-inner { grid-template-columns: 1fr; text-align: left; }
+            .qc-image { order: -1; display: flex; justify-content: center; }
             .qc-image img { max-height: 320px; }
-            .qc-text .section-subtitle { margin: 0 auto; }
-            .qc-features { align-items: center; }
+            .qc-text .section-subtitle { margin: 0; }
+            .qc-features { align-items: flex-start; }
             .gallery-carousel { border-radius: 12px; }
             .gallery-arrow { opacity: 1; width: 42px; height: 42px; }
         }
