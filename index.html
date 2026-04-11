@@ -298,14 +298,14 @@
             --grey-50:  #f9fafb;
             --white: #ffffff;
             --max-width: 1200px;
-            /* Brand colors */
-            --brand-primary: #16A34A;
-            --brand-dark: #14532D;
-            --brand-mid: #166534;
-            --brand-light: #DCFCE7;
-            --brand-xlight: #F0FDF4;
-            --accent: #F97316;
-            --accent-light: #FFF7ED;
+            /* Brand colors (original dark/neutral) */
+            --brand-primary: #1a1a1a;
+            --brand-dark: #111111;
+            --brand-mid: #2d2d2d;
+            --brand-light: #e0e0e0;
+            --brand-xlight: #f7f7f7;
+            --accent: #1a1a1a;
+            --accent-light: #f0f0f0;
         }
 
         /* ===== NAV ===== */
@@ -369,7 +369,7 @@
         .nav-cta:hover {
             background: var(--brand-mid);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(22,163,74,0.35);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .nav-right { display: flex; align-items: center; gap: 1.25rem; }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
@@ -470,13 +470,13 @@
             transition: all 0.3s;
         }
         .hero-cta-primary {
-            background: var(--brand-primary);
+            background: #EE4D2D;
             color: #fff;
         }
         .hero-cta-primary:hover {
-            background: var(--brand-mid);
+            background: #D63E20;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(22,163,74,0.4);
+            box-shadow: 0 8px 30px rgba(238,77,45,0.4);
         }
         .hero-cta-secondary {
             background: rgba(255,255,255,0.15);
@@ -547,9 +547,9 @@
 
         /* ===== STATS BAR ===== */
         .stats-bar {
-            background: var(--brand-dark);
+            background: var(--grey-900);
             padding: 3.5rem 2rem;
-            border-top: 3px solid var(--brand-primary);
+            border-top: 3px solid rgba(255,255,255,0.1);
         }
         .stats-inner {
             max-width: var(--max-width);
@@ -563,7 +563,7 @@
             font-family: 'Poppins', sans-serif;
             font-size: 2.75rem;
             font-weight: 800;
-            color: var(--brand-light);
+            color: #ffffff;
             line-height: 1;
             margin-bottom: 0.4rem;
         }
@@ -657,7 +657,7 @@
         .factory-icon {
             width: 44px;
             height: 44px;
-            background: var(--brand-primary);
+            background: var(--grey-900);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -810,16 +810,16 @@
             color: #92400E;
         }
         .badge-value {
-            background: var(--brand-xlight);
-            color: var(--brand-dark);
+            background: #e0e0e0;
+            color: #1a1a1a;
         }
         .badge-starter {
             background: #EDE9FE;
             color: #4C1D95;
         }
         .product-item.featured {
-            border-color: var(--brand-primary);
-            box-shadow: 0 0 0 2px rgba(22,163,74,0.15), 0 20px 60px rgba(0,0,0,0.1);
+            border-color: var(--grey-400);
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.08), 0 20px 60px rgba(0,0,0,0.1);
             transform: translateY(-4px);
         }
         .product-item.featured:hover {
@@ -841,7 +841,7 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--brand-primary);
+            color: var(--grey-900);
             margin-bottom: 1.25rem;
         }
         .product-price span {
@@ -896,7 +896,7 @@
         }
 
         /* ===== REVIEWS SECTION ===== */
-        .reviews-section { background: var(--brand-xlight); }
+        .reviews-section { background: var(--grey-50); }
         .reviews-header { text-align: center; margin-bottom: 3rem; }
         .reviews-header .section-subtitle { margin: 0 auto; }
         .aggregate-rating {
@@ -904,7 +904,7 @@
             align-items: center;
             gap: 0.6rem;
             background: #fff;
-            border: 1px solid var(--brand-light);
+            border: 1px solid var(--grey-200);
             border-radius: 50px;
             padding: 0.5rem 1.25rem;
             margin-bottom: 1.5rem;
@@ -922,13 +922,13 @@
             background: #fff;
             border-radius: 16px;
             padding: 1.75rem;
-            border: 1px solid var(--brand-light);
-            box-shadow: 0 2px 8px rgba(22,163,74,0.06);
+            border: 1px solid var(--grey-200);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s;
         }
         .review-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(22,163,74,0.12);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
         .review-header {
             display: flex;
@@ -941,14 +941,14 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--brand-light);
+            background: var(--grey-200);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             font-size: 1rem;
-            color: var(--brand-dark);
+            color: var(--grey-800);
             flex-shrink: 0;
         }
         .reviewer-name { font-weight: 600; font-size: 0.9rem; color: var(--grey-900); }
@@ -957,7 +957,7 @@
             align-items: center;
             gap: 0.25rem;
             font-size: 0.7rem;
-            color: var(--brand-primary);
+            color: var(--grey-500);
             font-weight: 600;
         }
         .review-stars { color: #FBBF24; font-size: 0.9rem; letter-spacing: 1px; flex-shrink: 0; }
@@ -1032,7 +1032,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            background: var(--brand-primary);
+            background: #0F146D;
             color: #fff;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
@@ -1042,7 +1042,7 @@
             transition: all 0.2s;
             white-space: nowrap;
         }
-        .sticky-btn-lazada:hover { background: var(--brand-mid); }
+        .sticky-btn-lazada:hover { background: #0a0e4d; }
         @media (max-width: 480px) {
             .sticky-buy-bar { padding: 0.75rem 1rem; }
             .sticky-buy-bar-text { font-size: 0.8rem; }
@@ -1266,7 +1266,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--brand-primary);
+            background: #0F146D;
             color: #fff;
             padding: 0.85rem 1.75rem;
             border-radius: 50px;
@@ -1277,9 +1277,9 @@
             transition: all 0.3s;
         }
         .channel-btn:hover {
-            background: var(--brand-mid);
+            background: #0a0e4d;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(22,163,74,0.3);
+            box-shadow: 0 8px 25px rgba(15,20,109,0.3);
         }
         .channel-btn-shopee {
             background: #EE4D2D;
@@ -1518,7 +1518,7 @@
 
         /* ===== FOCUS VISIBLE ===== */
         :focus-visible {
-            outline: 2px solid var(--brand-primary);
+            outline: 2px solid var(--grey-900);
             outline-offset: 2px;
         }
 
