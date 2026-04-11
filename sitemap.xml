@@ -1,57 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
     <url>
         <loc>https://www.sanking.my/</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- SEO Pillar & Category Pages -->
     <url>
-        <loc>https://www.sanking.my/blog/</loc>
-        <lastmod>2026-03-28</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://www.sanking.my/best-cat-litter-malaysia/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/bentonite-cat-litter/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/cat-litter-for-kittens/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/compare/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/faq/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/reviews/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.sanking.my/wholesale-cat-litter-malaysia/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Index -->
+    <url>
+        <loc>https://www.sanking.my/blog/</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Posts — New -->
+    <url>
+        <loc>https://www.sanking.my/blog/cat-litter-smell-control-tips.html</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/berapa-kerap-tukar-pasir-kucing.html</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Posts — Existing -->
+    <url>
         <loc>https://www.sanking.my/blog/best-cat-litter-malaysia-2026.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/pasir-kucing-terbaik-malaysia.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/bentonite-vs-tofu-cat-litter.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/how-to-choose-cat-litter.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/activated-carbon-cat-litter-odor-control.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/cat-litter-price-quality-comparison-malaysia.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.sanking.my/blog/panduan-memilih-pasir-kucing-berkualiti.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-04-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
 </urlset>

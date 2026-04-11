@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #1a1a1a;
     line-height: 1.6;
     overflow-x: hidden;
@@ -336,3 +336,69 @@ footer {
     .nav-links { display: none; }
     .related-posts { padding: 0 1.25rem 4rem; }
 }
+
+/* Heading font override to match homepage */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* Nav right (Shop Now button + hamburger) */
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+.nav-cta:hover { background: #2d2d2d; transform: translateY(-1px); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: #111827; margin: 5px 0; transition: all 0.3s; }
+
+/* Mobile responsive nav */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1rem 2rem 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        z-index: 99;
+    }
+    .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+}
+
+/* WhatsApp FAB (for blog posts) */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    width: 52px;
+    height: 52px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: all 0.3s;
+    z-index: 90;
+}
+.whatsapp-fab:hover { transform: translateY(-3px) scale(1.05); }
+.whatsapp-fab svg { width: 28px; height: 28px; }
