@@ -44,10 +44,10 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255,255,255,0.95);
+    background: var(--brand-dark);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-inner {
     max-width: var(--max-width);
@@ -64,18 +64,18 @@ nav {
     font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--grey-900);
+    color: #fff;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
-    color: var(--grey-600);
+    color: rgba(255,255,255,0.7);
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: color 0.3s;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--grey-900); }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
 .nav-right { display: flex; align-items: center; gap: 1.25rem; }
 .nav-cta {
     display: inline-flex;
@@ -108,7 +108,7 @@ nav {
     display: block;
     width: 22px;
     height: 1.5px;
-    background: var(--grey-900);
+    background: #fff;
     margin: 5px 0;
     transition: all 0.3s;
 }
@@ -415,6 +415,7 @@ nav {
 }
 .review-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
 .review-stars { color: #FBBF24; font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+.review-stars::before { content: "★★★★★"; }
 .review-text { font-size: 0.9rem; color: var(--grey-600); line-height: 1.6; margin-bottom: 1rem; }
 .review-author { font-size: 0.82rem; font-weight: 600; color: var(--grey-700); }
 .review-meta { font-size: 0.75rem; color: var(--grey-400); margin-top: 0.2rem; }
