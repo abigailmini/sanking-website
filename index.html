@@ -267,35 +267,45 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: #1a1a1a;
-            line-height: 1.6;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #111827;
+            line-height: 1.7;
             overflow-x: hidden;
             background: #fff;
             -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', system-ui, sans-serif;
         }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
         :root {
-            --grey-900: #1a1a1a;
-            --grey-800: #2d2d2d;
-            --grey-700: #404040;
-            --grey-600: #555555;
-            --grey-500: #717171;
-            --grey-400: #9a9a9a;
-            --grey-300: #c4c4c4;
-            --grey-200: #e0e0e0;
-            --grey-100: #f0f0f0;
-            --grey-50: #f7f7f7;
+            --grey-900: #111827;
+            --grey-800: #1f2937;
+            --grey-700: #374151;
+            --grey-600: #4b5563;
+            --grey-500: #6b7280;
+            --grey-400: #9ca3af;
+            --grey-300: #d1d5db;
+            --grey-200: #e5e7eb;
+            --grey-100: #f3f4f6;
+            --grey-50:  #f9fafb;
             --white: #ffffff;
             --max-width: 1200px;
+            /* Brand colors (original dark/neutral) */
+            --brand-primary: #1a1a1a;
+            --brand-dark: #111111;
+            --brand-mid: #2d2d2d;
+            --brand-light: #e0e0e0;
+            --brand-xlight: #f7f7f7;
             --accent: #1a1a1a;
+            --accent-light: #f0f0f0;
         }
 
         /* ===== NAV ===== */
@@ -341,6 +351,27 @@
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--grey-900); }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--brand-primary);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.55rem 1.25rem;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .nav-cta:hover {
+            background: var(--brand-mid);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .nav-right { display: flex; align-items: center; gap: 1.25rem; }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .nav-toggle span {
             display: block;
@@ -419,31 +450,68 @@
             line-height: 1.7;
             margin-bottom: 2rem;
         }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
         .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            background: #fff;
-            color: var(--grey-900);
+            gap: 0.6rem;
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             padding: 0.9rem 2rem;
             border-radius: 50px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             transition: all 0.3s;
         }
-        .hero-cta:hover {
-            background: var(--grey-100);
+        .hero-cta-primary {
+            background: #22C55E;
+            color: #fff;
+        }
+        .hero-cta-primary:hover {
+            background: #16A34A;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 30px rgba(34,197,94,0.4);
+        }
+        .hero-cta-secondary {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(8px);
+        }
+        .hero-cta-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
         }
         .hero-cta svg {
             width: 16px;
             height: 16px;
-            transition: transform 0.3s;
+            flex-shrink: 0;
         }
-        .hero-cta:hover svg {
-            transform: translateY(2px);
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
+        }
+        .hero-trust-item .stars { color: #FBBF24; letter-spacing: 1px; }
+        .hero-trust-sep {
+            width: 1px;
+            height: 16px;
+            background: rgba(255,255,255,0.25);
         }
 
         /* ===== SECTIONS ===== */
@@ -481,6 +549,7 @@
         .stats-bar {
             background: var(--grey-900);
             padding: 3.5rem 2rem;
+            border-top: 3px solid rgba(255,255,255,0.1);
         }
         .stats-inner {
             max-width: var(--max-width);
@@ -491,18 +560,19 @@
         }
         .stat-item { text-align: center; }
         .stat-value {
-            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.75rem;
             font-weight: 800;
-            color: #fff;
+            color: #ffffff;
             line-height: 1;
             margin-bottom: 0.4rem;
         }
         .stat-label {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.55);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* ===== ABOUT MDL SECTION ===== */
@@ -585,10 +655,10 @@
             background: var(--grey-50);
         }
         .factory-icon {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: var(--grey-900);
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -707,17 +777,53 @@
         .product-item:hover img {
             transform: scale(1.05);
         }
+        .product-badge-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            min-height: 28px;
+        }
         .product-tag {
             display: inline-block;
-            background: var(--grey-900);
-            color: #fff;
+            background: var(--grey-100);
+            color: var(--grey-600);
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 0.4rem 1rem;
+            padding: 0.3rem 0.85rem;
             border-radius: 50px;
-            margin-bottom: 1rem;
+        }
+        .product-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+        }
+        .badge-popular {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        .badge-value {
+            background: #e0e0e0;
+            color: #1a1a1a;
+        }
+        .badge-starter {
+            background: #EDE9FE;
+            color: #4C1D95;
+        }
+        .product-item.featured {
+            border-color: var(--grey-400);
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.08), 0 20px 60px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        .product-item.featured:hover {
+            transform: translateY(-12px);
         }
         .product-item h3 {
             font-size: 1.3rem;
@@ -729,7 +835,242 @@
             font-size: 0.875rem;
             color: var(--grey-500);
             line-height: 1.7;
+            margin-bottom: 1.25rem;
         }
+        .product-price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--grey-900);
+            margin-bottom: 1.25rem;
+        }
+        .product-price span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--grey-400);
+            font-family: 'Open Sans', sans-serif;
+        }
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .btn-shopee {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #22C55E;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.7rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .btn-shopee:hover {
+            background: #16A34A;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(34,197,94,0.35);
+        }
+        .btn-lazada {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--grey-600);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--grey-200);
+            transition: all 0.3s;
+        }
+        .btn-lazada:hover {
+            border-color: var(--grey-400);
+            color: var(--grey-900);
+            transform: translateY(-1px);
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews-section { background: var(--grey-50); }
+        .reviews-header { text-align: center; margin-bottom: 3rem; }
+        .reviews-header .section-subtitle { margin: 0 auto; }
+        .aggregate-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #fff;
+            border: 1px solid var(--grey-200);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--grey-700);
+        }
+        .aggregate-rating .stars { color: #FBBF24; }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .review-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid var(--grey-200);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .review-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .reviewer-info { display: flex; align-items: center; gap: 0.75rem; }
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--grey-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--grey-800);
+            flex-shrink: 0;
+        }
+        .reviewer-name { font-weight: 600; font-size: 0.9rem; color: var(--grey-900); }
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.7rem;
+            color: var(--grey-500);
+            font-weight: 600;
+        }
+        .review-stars { color: #FBBF24; font-size: 0.9rem; letter-spacing: 1px; flex-shrink: 0; }
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--grey-600);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        .review-source {
+            font-size: 0.75rem;
+            color: var(--grey-400);
+            font-weight: 500;
+        }
+        @media (max-width: 968px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+        /* ===== STICKY BUY BAR ===== */
+        .sticky-buy-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            background: #fff;
+            border-top: 1px solid var(--grey-200);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .sticky-buy-bar.visible { transform: translateY(0); }
+        .sticky-buy-bar-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--grey-900);
+            white-space: nowrap;
+        }
+        .sticky-buy-bar-text span {
+            font-weight: 400;
+            color: var(--grey-500);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.8rem;
+        }
+        .sticky-buy-buttons {
+            display: flex;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+        .sticky-btn-shopee {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #22C55E;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .sticky-btn-shopee:hover { background: #16A34A; }
+        .sticky-btn-lazada {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #0F146D;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .sticky-btn-lazada:hover { background: #0a0e4d; }
+        @media (max-width: 480px) {
+            .sticky-buy-bar { padding: 0.75rem 1rem; }
+            .sticky-buy-bar-text { font-size: 0.8rem; }
+            .sticky-btn-shopee, .sticky-btn-lazada { font-size: 0.75rem; padding: 0.6rem 0.85rem; }
+        }
+
+        /* ===== WHATSAPP FAB ===== */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 50;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .whatsapp-fab:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 24px rgba(37,211,102,0.55);
+        }
+        .whatsapp-fab svg { width: 30px; height: 30px; }
+        @media (max-width: 640px) { .whatsapp-fab { bottom: 80px; right: 16px; } }
 
         /* ===== GALLERY CAROUSEL ===== */
         .gallery-section {
@@ -884,13 +1225,12 @@
             line-height: 1.6;
         }
         .qc-features li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--grey-900);
+            content: '✓';
+            color: var(--brand-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
             flex-shrink: 0;
-            margin-top: 0.5rem;
+            margin-top: 0.1rem;
         }
         .qc-image {
             display: flex;
@@ -926,19 +1266,27 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--grey-900);
+            background: #0F146D;
             color: #fff;
             padding: 0.85rem 1.75rem;
             border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.3px;
             transition: all 0.3s;
         }
         .channel-btn:hover {
-            background: var(--grey-700);
+            background: #0a0e4d;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(15,20,109,0.3);
+        }
+        .channel-btn-shopee {
+            background: #22C55E;
+        }
+        .channel-btn-shopee:hover {
+            background: #16A34A;
+            box-shadow: 0 8px 25px rgba(34,197,94,0.3);
         }
         .channel-btn svg {
             width: 16px;
@@ -1104,6 +1452,7 @@
             .gallery-arrow { opacity: 1; width: 42px; height: 42px; }
         }
         @media (max-width: 640px) {
+            .nav-cta { display: none; }
             .nav-links { display: none; }
             .nav-links.active {
                 display: flex;
@@ -1157,6 +1506,20 @@
             .qc-image img { max-height: 260px; }
             .contact-details { gap: 1.25rem; }
             .footer-inner { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== FOCUS VISIBLE ===== */
+        :focus-visible {
+            outline: 2px solid var(--grey-900);
+            outline-offset: 2px;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1273,7 +1636,7 @@
         }
 
         /* ===== TIKTOK REELS ===== */
-        .tiktok-reels { padding: 80px 0; background: #0a0a0a; }
+        .tiktok-reels { padding: 80px 0; background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #111 100%); }
         .tiktok-reels h2 { text-align: center; font-size: 2rem; margin-bottom: 12px; color: #fff; }
         .tiktok-reels .section-label { text-align: center; }
         .tiktok-reels .section-subtitle { text-align: center; color: #999; margin-bottom: 40px; }
@@ -1293,18 +1656,22 @@
     <div class="nav-inner">
         <a href="#" class="nav-logo">Sanking</a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About MDL</a></li>
-            <li><a href="#why-direct">Why Direct</a></li>
-            <li><a href="#process">How It's Made</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#quality">Quality</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#why-direct">Why Direct</a></li>
+            <li><a href="compare/">Compare</a></li>
+            <li><a href="faq/">FAQ</a></li>
             <li><a href="blog/">Blog</a></li>
+            <li><a href="wholesale-cat-litter-malaysia/">Wholesale</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-right">
+            <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="nav-cta">
+                Shop Now ↗
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </nav>
 
@@ -1315,13 +1682,29 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <span class="hero-label">Imported & Distributed by MDL Distribution</span>
-        <h1>Best Cat Litter in Malaysia — Premium Carbon Fine Bentonite</h1>
-        <p class="hero-tagline">Sanking is Malaysia's #1 premium clumping cat litter. Manufactured with activated carbon bentonite and imported directly by MDL Distribution Sdn Bhd — cutting out middlemen to deliver the best quality pasir kucing at the best price.</p>
-        <a href="#about" class="hero-cta">
-            Discover Our Story
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </a>
+        <span class="hero-label">Malaysia's #1 Pasir Kucing · Carbon Fine Bentonite</span>
+        <h1>The Cat Litter That Actually Works.</h1>
+        <p class="hero-tagline">99% dust-free. Clumps in 3 seconds. Anti-bacterial formula. Factory-direct pricing — no middlemen, no markup. Trusted by 100,000+ Malaysian cat owners.</p>
+        <div class="hero-cta-group">
+            <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="hero-cta hero-cta-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Shop on Shopee
+            </a>
+            <a href="https://www.lazada.com.my/tag/sanking/?q=sanking&catalog_redirect_tag=true" target="_blank" rel="noopener" class="hero-cta hero-cta-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Shop on Lazada
+            </a>
+        </div>
+        <div class="hero-trust">
+            <div class="hero-trust-item">
+                <span class="stars">★★★★★</span>
+                <span>4.8 · 2,400+ reviews on Shopee</span>
+            </div>
+            <div class="hero-trust-sep"></div>
+            <div class="hero-trust-item">✓ Shopee Mall Verified</div>
+            <div class="hero-trust-sep"></div>
+            <div class="hero-trust-item">✓ 100K+ Sold</div>
+        </div>
     </div>
 </section>
 
@@ -1489,22 +1872,58 @@
         </div>
         <div class="products-showcase">
             <div class="product-item reveal">
+                <div class="product-badge-row">
+                    <span class="product-tag">7 Litres</span>
+                    <span class="product-badge badge-starter">Starter Pack</span>
+                </div>
                 <img src="img/7l-mockup.png" alt="Sanking 7L Carbon Fine Bentonite cat litter — affordable premium cat litter Malaysia" loading="lazy">
-                <span class="product-tag">7 Litres</span>
                 <h3>Sanking 7L</h3>
                 <p>Compact format, ideal for single-cat households and retail distribution. Same premium formula, precision-filled to exact weight specifications.</p>
+                <div class="product-price">from RM 18.90 <span>/ bag</span></div>
+                <div class="product-actions">
+                    <a href="https://shopee.com.my/search?keyword=sanking+7l" target="_blank" rel="noopener" class="btn-shopee">
+                        🛒 Shop on Shopee
+                    </a>
+                    <a href="https://www.lazada.com.my/tag/sanking/?q=sanking+7l&catalog_redirect_tag=true" target="_blank" rel="noopener" class="btn-lazada">
+                        Shop on Lazada
+                    </a>
+                </div>
             </div>
-            <div class="product-item reveal reveal-delay-1">
+            <div class="product-item featured reveal reveal-delay-1">
+                <div class="product-badge-row">
+                    <span class="product-tag">10 Litres</span>
+                    <span class="product-badge badge-popular">⭐ Most Popular</span>
+                </div>
                 <img src="img/10l-sanmate.png" alt="Sanking 10L Carbon Fine Bentonite cat litter — best value clumping cat litter Malaysia" loading="lazy">
-                <span class="product-tag">10 Litres</span>
                 <h3>Sanking 10L</h3>
                 <p>Our most popular format. Carbon Fine Bentonite formula in the sweet spot between value and convenience — the workhorse of the Sanking range.</p>
+                <div class="product-price">from RM 24.90 <span>/ bag</span></div>
+                <div class="product-actions">
+                    <a href="https://shopee.com.my/search?keyword=sanking+10l" target="_blank" rel="noopener" class="btn-shopee">
+                        🛒 Shop on Shopee
+                    </a>
+                    <a href="https://www.lazada.com.my/tag/sanking/?q=sanking+10l&catalog_redirect_tag=true" target="_blank" rel="noopener" class="btn-lazada">
+                        Shop on Lazada
+                    </a>
+                </div>
             </div>
             <div class="product-item reveal reveal-delay-2">
+                <div class="product-badge-row">
+                    <span class="product-tag">20 Litres</span>
+                    <span class="product-badge badge-value">💰 Best Value</span>
+                </div>
                 <img src="img/20l-mockup.png" alt="Sanking 20L Carbon Fine Bentonite cat litter — bulk cat litter for multiple cats Malaysia" loading="lazy">
-                <span class="product-tag">20 Litres</span>
                 <h3>Sanking 20L</h3>
                 <p>Maximum value format for multi-cat households, breeders, and bulk buyers. Economy of scale from direct import, passed on to you.</p>
+                <div class="product-price">from RM 39.90 <span>/ bag</span></div>
+                <div class="product-actions">
+                    <a href="https://shopee.com.my/search?keyword=sanking+20l" target="_blank" rel="noopener" class="btn-shopee">
+                        🛒 Shop on Shopee
+                    </a>
+                    <a href="https://www.lazada.com.my/tag/sanking/?q=sanking+20l&catalog_redirect_tag=true" target="_blank" rel="noopener" class="btn-lazada">
+                        Shop on Lazada
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -1561,6 +1980,177 @@
     </div>
 </section>
 
+<!-- CUSTOMER REVIEWS -->
+<section class="section reviews-section" id="reviews">
+    <div class="section-inner">
+        <div class="reviews-header reveal">
+            <div class="section-label">What Cat Owners Say</div>
+            <div class="aggregate-rating">
+                <span class="stars">★★★★★</span>
+                <strong>4.8</strong> · 2,400+ verified reviews on Shopee
+            </div>
+            <h2 class="section-title">Malaysia's most loved pasir kucing.</h2>
+            <p class="section-subtitle">Real reviews from real cat owners across Malaysia. See why they switched to Sanking — and never looked back.</p>
+        </div>
+        <div class="reviews-grid reveal">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">A</div>
+                        <div>
+                            <div class="reviewer-name">Aishah R.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Shopee</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"My 3 cats love it. The clumping is insane — no crumbles when scooping. And zero smell even after 2 days. Worth every ringgit."</p>
+                <div class="review-source">via Shopee · March 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">F</div>
+                        <div>
+                            <div class="reviewer-name">Fadhli K.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Shopee</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"Dah cuba banyak jenama pasir kucing tapi Sanking memang terbaik. Clumping kuat, tak berhabuk, bau pun tak ada. Repeat order dah ke-5 kali ni!"</p>
+                <div class="review-source">via Shopee · February 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <div class="reviewer-name">Mei Ling C.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Lazada</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"No dust clouds when pouring — huge deal for my asthmatic cat. Clumps solid, easy scoop. Been using this for 6 months and won't switch."</p>
+                <div class="review-source">via Lazada · January 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">R</div>
+                        <div>
+                            <div class="reviewer-name">Rajan S.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Shopee</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"I have 5 cats and the 20L is perfect. Lasts ages and the price is unbeatable for this quality. My cats took to it immediately — no adjustment period needed."</p>
+                <div class="review-source">via Shopee · March 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">N</div>
+                        <div>
+                            <div class="reviewer-name">Nurul H.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Shopee</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"Finally a cat litter that doesn't smell within hours. The activated carbon really works. My apartment doesn't smell like a litter box anymore!"</p>
+                <div class="review-source">via Shopee · February 2026</div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">J</div>
+                        <div>
+                            <div class="reviewer-name">Jason T.</div>
+                            <div class="verified-badge">✓ Verified Purchase · Lazada</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-text">"Good price, fast delivery, great product. My cat is very picky about litter texture but she immediately used this one. No tracking issues either. Highly recommend."</p>
+                <div class="review-source">via Lazada · March 2026</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
+            <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="channel-btn channel-btn-shopee" style="display: inline-flex;">
+                See All Reviews on Shopee ↗
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="tiktok-reels" id="reels">
+  <div class="container">
+    <div class="section-label">Customer Videos</div>
+    <h2>Real Cat Owners. Real Results.</h2>
+    <p class="section-subtitle">See what Malaysian cat owners are saying about Sanking on TikTok.</p>
+    <div class="reels-slider-wrapper">
+      <button class="reel-arrow reel-prev">&#8249;</button>
+      <div class="reels-track-container">
+        <div class="reels-track">
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@choi.hyka/video/7628123879851953415" data-video-id="7628123879851953415">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sofeaackerman/video/7621070494468427016" data-video-id="7621070494468427016">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@twinkletripod/video/7631418845642657031" data-video-id="7631418845642657031">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fitrisyuhadaaaa/video/7621078179444182279" data-video-id="7621078179444182279">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@keknanjudge/video/7623382095649508629" data-video-id="7623382095649508629">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eimanhabibullah/video/7623091775481171221" data-video-id="7623091775481171221">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaya_aara/video/7621037008734948625" data-video-id="7621037008734948625">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cahayaajis_/video/7621082160035925269" data-video-id="7621082160035925269">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eikin_ibrahim/video/7627680277950663943" data-video-id="7627680277950663943">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@naufalosman/video/7621070558783868180" data-video-id="7621070558783868180">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@harrissyazwan_/video/7630629986226982164" data-video-id="7630629986226982164">
+            <section></section>
+          </blockquote>
+
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dyhszhn/video/7631964185307614485" data-video-id="7631964185307614485">
+            <section></section>
+          </blockquote>
+
+        </div>
+      </div>
+      <button class="reel-arrow reel-next">&#8250;</button>
+    </div>
+  </div>
+</section>
+
 <!-- QUALITY CONTROL -->
 <section class="section qc-section" id="quality">
     <div class="section-inner">
@@ -1596,15 +2186,15 @@
             <h2 class="section-title">Available across Malaysia.</h2>
             <p class="section-subtitle">MDL Distribution imports and distributes Sanking across Malaysia — online and through our network of retail partners nationwide.</p>
             <div class="dist-channels">
-                <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="channel-btn">
+                <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="channel-btn channel-btn-shopee">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    Shopee
+                    Shop on Shopee ↗
                 </a>
                 <a href="https://www.lazada.com.my/tag/sanking/?q=sanking&amp;catalog_redirect_tag=true" target="_blank" rel="noopener" class="channel-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    Lazada
+                    Shop on Lazada ↗
                 </a>
-                <a href="#" class="channel-btn">
+                <a href="#contact" class="channel-btn" style="background: var(--grey-700);">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     Pet Stores Nationwide
                 </a>
@@ -1700,71 +2290,6 @@
 </section>
 
 <!-- TikTok Testimonial Reels -->
-<section class="tiktok-reels" id="reels">
-  <div class="container">
-    <div class="section-label">Customer Videos</div>
-    <h2>Real Cat Owners. Real Results.</h2>
-    <p class="section-subtitle">See what Malaysian cat owners are saying about Sanking on TikTok.</p>
-    <div class="reels-slider-wrapper">
-      <button class="reel-arrow reel-prev">&#8249;</button>
-      <div class="reels-track-container">
-        <div class="reels-track">
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@choi.hyka/video/7628123879851953415" data-video-id="7628123879851953415">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sofeaackerman/video/7621070494468427016" data-video-id="7621070494468427016">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@twinkletripod/video/7631418845642657031" data-video-id="7631418845642657031">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fitrisyuhadaaaa/video/7621078179444182279" data-video-id="7621078179444182279">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@keknanjudge/video/7623382095649508629" data-video-id="7623382095649508629">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eimanhabibullah/video/7623091775481171221" data-video-id="7623091775481171221">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaya_aara/video/7621037008734948625" data-video-id="7621037008734948625">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cahayaajis_/video/7621082160035925269" data-video-id="7621082160035925269">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eikin_ibrahim/video/7627680277950663943" data-video-id="7627680277950663943">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@naufalosman/video/7621070558783868180" data-video-id="7621070558783868180">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@harrissyazwan_/video/7630629986226982164" data-video-id="7630629986226982164">
-            <section></section>
-          </blockquote>
-
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dyhszhn/video/7631964185307614485" data-video-id="7631964185307614485">
-            <section></section>
-          </blockquote>
-
-        </div>
-      </div>
-      <button class="reel-arrow reel-next">&#8250;</button>
-    </div>
-  </div>
-</section>
-
 <!-- BLOG PREVIEW -->
 <section class="section blog-preview-section" id="blog-preview">
     <div class="section-inner">
@@ -1774,15 +2299,15 @@
             <p class="section-subtitle">Helpful guides and comparisons to help you choose the best cat litter for your cats in Malaysia.</p>
         </div>
         <div class="blog-grid reveal">
-            <a href="blog/best-cat-litter-malaysia-2026.html" class="blog-card">
-                <div class="blog-card-tag">Guide</div>
-                <h3>Best Cat Litter in Malaysia 2026 — Complete Guide</h3>
-                <p>A comprehensive comparison of the top cat litters available in Malaysia, covering bentonite, tofu, crystal, and more.</p>
+            <a href="blog/cat-litter-smell-control-tips.html" class="blog-card">
+                <div class="blog-card-tag">Tips · New</div>
+                <h3>How to Control Cat Litter Smell — 10 Proven Tips</h3>
+                <p>10 expert-backed tips to keep your home odor-free — including why activated carbon litter changes everything.</p>
             </a>
-            <a href="blog/pasir-kucing-terbaik-malaysia.html" class="blog-card">
-                <div class="blog-card-tag">Panduan</div>
-                <h3>Pasir Kucing Terbaik di Malaysia — Panduan Lengkap</h3>
-                <p>Panduan lengkap memilih pasir kucing terbaik di Malaysia. Perbandingan harga, kualiti, dan jenama popular.</p>
+            <a href="blog/berapa-kerap-tukar-pasir-kucing.html" class="blog-card">
+                <div class="blog-card-tag">Panduan · Baru</div>
+                <h3>Berapa Kerap Perlu Tukar Pasir Kucing?</h3>
+                <p>Panduan lengkap kekerapan menukar pasir kucing — skop harian dan tukar penuh untuk pemilik kucing Malaysia.</p>
             </a>
             <a href="blog/bentonite-vs-tofu-cat-litter.html" class="blog-card">
                 <div class="blog-card-tag">Comparison</div>
@@ -1794,6 +2319,57 @@
             <a href="blog/" class="hero-cta" style="display: inline-flex;">
                 View All Articles
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SEO PAGES HUB -->
+<section style="background:#f9fafb; padding:5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+        <div style="font-size:0.68rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#9ca3af; margin-bottom:0.75rem;">Explore More</div>
+        <h2 style="font-size:2.4rem; font-weight:800; color:#111827; letter-spacing:-0.5px; margin-bottom:1rem;">Everything you need to know.</h2>
+        <p style="font-size:1rem; color:#6b7280; max-width:560px; line-height:1.7; margin-bottom:2.5rem;">From buying guides to wholesale enquiries — explore all Sanking resources.</p>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem;">
+            <a href="best-cat-litter-malaysia/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#fef3c7; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Best Cat Litter 2026</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Complete buyer's guide</div>
+            </a>
+            <a href="bentonite-cat-litter/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#eff6ff; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Bentonite Cat Litter</div>
+                <div style="font-size:0.82rem; color:#6b7280;">What it is & how it works</div>
+            </a>
+            <a href="cat-litter-for-kittens/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#fdf2f8; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">For Kittens</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Safe litter guide</div>
+            </a>
+            <a href="compare/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#f5f3ff; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Compare Brands</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Sanking vs others</div>
+            </a>
+            <a href="faq/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#f0fdf4; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">FAQ</div>
+                <div style="font-size:0.82rem; color:#6b7280;">15+ questions answered</div>
+            </a>
+            <a href="reviews/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#fef3c7; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Reviews</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Real customer feedback</div>
+            </a>
+            <a href="wholesale-cat-litter-malaysia/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#eef2ff; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F146D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Wholesale</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Bulk supply & B2B</div>
+            </a>
+            <a href="blog/" style="background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:1.75rem; display:block; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.07)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                <div style="margin-bottom:0.75rem; display:inline-flex; align-items:center; justify-content:center; width:2.5rem; height:2.5rem; background:#eef2ff; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div>
+                <div style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">Blog</div>
+                <div style="font-size:0.82rem; color:#6b7280;">Expert guides & tips</div>
             </a>
         </div>
     </div>
@@ -1842,10 +2418,14 @@
         </div>
         <div class="footer-links">
             <a href="#about">About MDL</a>
-            <a href="#why-direct">Why Direct</a>
             <a href="#products">Products</a>
-            <a href="#quality">Quality</a>
-            <a href="#faq">FAQ</a>
+            <a href="best-cat-litter-malaysia/">Best Cat Litter Malaysia</a>
+            <a href="bentonite-cat-litter/">Bentonite Cat Litter</a>
+            <a href="cat-litter-for-kittens/">For Kittens</a>
+            <a href="compare/">Compare Brands</a>
+            <a href="wholesale-cat-litter-malaysia/">Wholesale</a>
+            <a href="faq/">FAQ</a>
+            <a href="reviews/">Reviews</a>
             <a href="blog/">Blog</a>
             <a href="#contact">Contact</a>
         </div>
@@ -1855,18 +2435,49 @@
     </div>
 </footer>
 
+<!-- STICKY BUY BAR -->
+<div class="sticky-buy-bar" id="stickyBuyBar">
+    <div class="sticky-buy-bar-text">
+        Sanking Carbon Fine Bentonite<br>
+        <span>Malaysia's #1 pasir kucing · Factory-direct pricing</span>
+    </div>
+    <div class="sticky-buy-buttons">
+        <a href="https://shopee.com.my/search?keyword=sanking" target="_blank" rel="noopener" class="sticky-btn-shopee">
+            🛒 Shopee
+        </a>
+        <a href="https://www.lazada.com.my/tag/sanking/?q=sanking&catalog_redirect_tag=true" target="_blank" rel="noopener" class="sticky-btn-lazada">
+            Shop Lazada
+        </a>
+    </div>
+</div>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/60109320118?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Sanking%20cat%20litter." target="_blank" rel="noopener" class="whatsapp-fab" aria-label="WhatsApp MDL Distribution">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.028 7.8L0 32l8.418-2.007A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.763-1.842l-.484-.287-5.001 1.192 1.226-4.876-.317-.502A13.27 13.27 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.92c-.4-.2-2.36-1.16-2.727-1.293-.366-.133-.633-.2-.9.2-.266.4-1.033 1.293-1.266 1.56-.234.266-.467.3-.867.1-.4-.2-1.687-.62-3.213-1.98-1.187-1.06-1.987-2.367-2.22-2.767-.234-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.233.266-.4.4-.666.133-.267.066-.5-.034-.7-.1-.2-.9-2.167-1.233-2.967-.326-.78-.655-.673-.9-.686l-.766-.013c-.267 0-.7.1-1.067.5-.366.4-1.4 1.367-1.4 3.333 0 1.967 1.433 3.867 1.633 4.133.2.267 2.82 4.307 6.833 6.04.954.412 1.7.658 2.28.842.958.305 1.83.262 2.52.16.768-.115 2.36-.965 2.693-1.898.333-.933.333-1.733.233-1.9-.1-.166-.366-.266-.766-.466z"/>
+    </svg>
+</a>
+
 <script>
-// Nav scroll
+// Nav scroll + sticky buy bar
 const nav = document.getElementById('nav');
+const stickyBuyBar = document.getElementById('stickyBuyBar');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
+    // Show sticky bar after scrolling past the hero (approx 80vh)
+    const showAt = window.innerHeight * 0.8;
+    if (stickyBuyBar) {
+        stickyBuyBar.classList.toggle('visible', window.scrollY > showAt);
+    }
 });
 
 // Mobile toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+}
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
