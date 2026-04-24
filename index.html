@@ -1636,11 +1636,12 @@
         }
 
         /* ===== TIKTOK REELS ===== */
-        .tiktok-reels { padding: 80px 0; background: #0a0a0a; }
+        .tiktok-reels { padding: 80px 0; background: #0a0a0a; overflow: hidden; }
         .tiktok-reels h2 { text-align: center; font-size: 2rem; margin-bottom: 12px; color: #fff; }
         .tiktok-reels .section-label { text-align: center; }
         .tiktok-reels .section-subtitle { text-align: center; color: #999; margin-bottom: 40px; }
-        .reels-slider-wrapper { position: relative; display: flex; align-items: center; gap: 12px; }
+        .reels-slider-wrapper { position: relative; display: flex; align-items: center; gap: 12px; max-width: 100%; overflow: hidden; }
+        .tiktok-reels .container { max-width: 100%; overflow: hidden; }
         .reels-track-container { overflow: hidden; width: 100%; }
         .reels-track { display: flex; gap: 16px; transition: transform 0.4s ease; }
         .reels-track .tiktok-embed { flex: 0 0 calc(33.333% - 12px); min-width: 0 !important; max-width: none !important; }
