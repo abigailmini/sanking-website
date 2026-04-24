@@ -1634,6 +1634,15 @@
             .blog-grid { grid-template-columns: 1fr; }
             .faq-question { font-size: 0.925rem; }
         }
+
+        /* ===== TIKTOK REELS ===== */
+        .tiktok-reels { padding: 80px 0; background: #0a0a0a; }
+        .tiktok-reels h2 { text-align: center; font-size: 2rem; margin-bottom: 12px; color: #fff; }
+        .tiktok-reels .section-label { text-align: center; }
+        .tiktok-reels .section-subtitle { text-align: center; color: #999; margin-bottom: 40px; }
+        .reels-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; overflow-x: auto; }
+        @media (max-width: 768px) { .reels-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
     </style>
 </head>
 <body>
@@ -2211,6 +2220,66 @@
     </div>
 </section>
 
+<!-- TikTok Testimonial Reels -->
+<section class="tiktok-reels" id="reels">
+  <div class="container">
+    <div class="section-label">Customer Videos</div>
+    <h2>Real Cat Owners. Real Results.</h2>
+    <p class="section-subtitle">See what Malaysian cat owners are saying about Sanking on TikTok.</p>
+    <div class="reels-grid">
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@choi.hyka/video/7628123879851953415" data-video-id="7628123879851953415" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sofeaackerman/video/7621070494468427016" data-video-id="7621070494468427016" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@twinkletripod/video/7631418845642657031" data-video-id="7631418845642657031" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fitrisyuhadaaaa/video/7621078179444182279" data-video-id="7621078179444182279" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@keknanjudge/video/7623382095649508629" data-video-id="7623382095649508629" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eimanhabibullah/video/7623091775481171221" data-video-id="7623091775481171221" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaya_aara/video/7621037008734948625" data-video-id="7621037008734948625" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cahayaajis_/video/7621082160035925269" data-video-id="7621082160035925269" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eikin_ibrahim/video/7627680277950663943" data-video-id="7627680277950663943" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@naufalosman/video/7621070558783868180" data-video-id="7621070558783868180" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@harrissyazwan_/video/7630629986226982164" data-video-id="7630629986226982164" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dyhszhn/video/7631964185307614485" data-video-id="7631964185307614485" style="max-width:325px; min-width:325px;">
+        <section></section>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
 <!-- BLOG PREVIEW -->
 <section class="section blog-preview-section" id="blog-preview">
     <div class="section-inner">
@@ -2527,5 +2596,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 });
 </script>
 
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
