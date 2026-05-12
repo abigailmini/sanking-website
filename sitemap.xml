@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Homepage -->
     <url>
         <loc>https://www.sanking.my/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- About -->
     <url>
         <loc>https://www.sanking.my/about/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Product Pages -->
     <url>
         <loc>https://www.sanking.my/sanking-7l-cat-litter/</loc>
         <changefreq>monthly</changefreq>
@@ -30,27 +25,113 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- Where to Buy -->
     <url>
         <loc>https://www.sanking.my/where-to-buy/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Blog Pages (referenced on sanking.my) -->
     <url>
-        <loc>https://www.sanking.my/blog/best-cat-litter-malaysia-2026.html</loc>
+        <loc>https://www.sanking.my/blog/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/best-cat-litter-malaysia/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.sanking.my/blog/pasir-kucing-terbaik-malaysia.html</loc>
+        <loc>https://www.sanking.my/blog/cat-litter-value-for-money/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.sanking.my/blog/bentonite-vs-tofu-cat-litter.html</loc>
+        <loc>https://www.sanking.my/blog/top-10-cat-litter-malaysia/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/bentonite-vs-tofu-cat-litter/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/dust-free-cat-litter-malaysia/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/best-cat-litter-multiple-cats/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/how-often-change-cat-litter/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/best-cat-litter-odor-control/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/how-much-cat-litter-per-month/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/best-cat-litter-for-kittens/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-terbaik/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-best/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/top-10-pasir-kucing/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-tak-berdebu/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/bentonite-vs-tofu-pasir-kucing/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-murah-berkualiti/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/berapa-kerap-tukar-pasir-kucing/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-untuk-anak-kucing/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/pasir-kucing-anti-bau/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.sanking.my/blog/cara-jimat-pasir-kucing/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
