@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sanking Store — Malaysia's #1 Bentonite Cat Litter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" />
+<style>
+:root{
+  --navy-950:#0A1628;--navy-900:#0E1E37;--navy-800:#13284A;--navy-100:#E7ECF4;--navy-50:#F4F6FB;
+  --green-600:#2E7D5B;--green-500:#3B9A70;--green-400:#57B487;--green-100:#E4F2EA;--green-50:#F1F8F3;
+  --ink:#0A1628;--ink-2:#34415A;--ink-3:#64708A;--line:#E2E6EF;--line-2:#EEF0F6;--cream:#FAFAF7;
+  --shopee:#EE4D2D;
+  --radius:14px;--radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(12,22,40,.04);
+  --shadow:0 10px 30px -12px rgba(12,22,40,.18), 0 2px 6px rgba(12,22,40,.04);
+  --shadow-lg:0 30px 60px -20px rgba(12,22,40,.28);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--green-600)}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{margin:0;letter-spacing:-.02em;color:var(--navy-950);text-wrap:balance}
+p{margin:0;color:var(--ink-2);text-wrap:pretty}
+.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid var(--line-2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy-950)}
+.logo-mark{width:28px;height:28px;border-radius:8px;background:var(--navy-900);display:grid;place-items:center;color:#fff;font-size:12px;font-weight:800;position:relative}
+.logo-mark::after{content:"";position:absolute;inset:auto -3px -3px auto;width:9px;height:9px;border-radius:3px;background:var(--green-500);box-shadow:0 0 0 2px #fff}
+.nav-right{display:flex;align-items:center;gap:16px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.nav-right .ship-note{display:flex;align-items:center;gap:6px;color:var(--green-600)}
+@media (max-width:560px){.nav-right .ship-note span{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-green{background:var(--green-500);color:#fff;box-shadow:0 10px 24px -8px rgba(59,154,112,.5)}
+.btn-green:hover{background:var(--green-600);color:#fff}
+.btn-dark{background:var(--navy-900);color:#fff}
+.btn-dark:hover{background:var(--navy-800);color:#fff}
+.btn-ghost{border:1px solid var(--line);color:var(--navy-900)}
+.btn-ghost:hover{background:var(--navy-50);color:var(--navy-900)}
+.btn-block{width:100%}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* Hero video */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;background:var(--navy-950)}
+.hero video,.hero .vid-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .vid-fallback{background:radial-gradient(900px 500px at 70% 30%, rgba(87,180,135,.25), transparent 60%),linear-gradient(160deg,var(--navy-800),var(--navy-950))}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(10,22,40,.82) 0%, rgba(10,22,40,.55) 45%, rgba(10,22,40,.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:96px 0;max-width:640px}
+.hero h1{color:#fff;font-size:clamp(38px,5.5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.035em}
+.hero h1 .accent{color:var(--green-400);font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.hero p{color:rgba(255,255,255,.82);font-size:18px;margin-top:20px;max-width:46ch}
+.hero-badges{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.hero-badge{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;display:inline-flex;align-items:center;gap:7px}
+.hero-badge svg{color:var(--green-400)}
+.hero-cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap;align-items:center}
+.hero-cta .micro{color:rgba(255,255,255,.65);font-size:13px}
+
+/* Ticker */
+.ticker{background:var(--navy-900);color:#fff;overflow:hidden;padding:12px 0;border-top:1px solid rgba(255,255,255,.08)}
+.ticker-track{display:flex;gap:48px;white-space:nowrap;animation:tick 28s linear infinite;width:max-content}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker span{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);display:inline-flex;align-items:center;gap:8px}
+.ticker b{color:var(--green-400)}
+
+/* Petshops */
+.petshops{padding:72px 0;background:var(--cream);border-top:1px solid var(--line-2)}
+.petshop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1000px;margin:0 auto}
+@media (max-width:960px){.petshop-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:600px){.petshop-grid{grid-template-columns:repeat(3,1fr)}}
+.petshop-logo{aspect-ratio:3/2;background:#fff;border:1px solid var(--line-2);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;filter:grayscale(1);opacity:.75;transition:filter .2s,opacity .2s}
+.petshop-logo:hover{filter:none;opacity:1}
+.petshop-logo svg{width:30px;height:30px}
+.petshop-logo .nm{font-size:12.5px;font-weight:800;letter-spacing:-.01em;text-align:center;line-height:1.15}
+.petshop-logo .tg{font-size:8.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+/* Savings */
+.savings{padding:88px 0;background:#fff}
+.sv-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto;position:relative}
+@media (max-width:720px){.sv-grid{grid-template-columns:1fr;gap:40px}}
+.sv-vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:96px;height:96px;border-radius:999px;background:var(--navy-950);color:#fff;display:grid;place-items:center;font-weight:800;font-size:32px;letter-spacing:.04em;box-shadow:0 12px 32px -8px rgba(10,22,40,.55);border:4px solid #fff;font-family:'Instrument Serif';font-style:italic}
+.sv-photo{height:220px;border-radius:14px;display:grid;place-items:center;margin-bottom:22px;position:relative;overflow:hidden}
+.sv-card.them .sv-photo{background:transparent}
+.sv-card.us .sv-photo{background:transparent}
+.sv-photo img{height:200px;width:auto;filter:drop-shadow(0 12px 20px rgba(14,30,55,.25))}
+.sv-photo img.bx{height:200px;width:auto;object-fit:contain;filter:grayscale(.25) drop-shadow(0 12px 20px rgba(14,30,55,.18))}
+.sv-photo .ribbon{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.sv-card.them .ribbon{background:rgba(92,92,85,.12);color:#5C5C55}
+.sv-card.us .ribbon{background:var(--green-500);color:#fff}
+.sv-card{border-radius:var(--radius-lg);padding:34px 30px;border:2px solid var(--line)}
+.sv-card.them{background:var(--cream)}
+.sv-card.us{background:var(--green-50);border-color:var(--green-500);position:relative}
+.sv-card .lbl{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.sv-card.us .lbl{color:var(--green-600)}
+.sv-card .amt{font-size:44px;font-weight:800;letter-spacing:-.03em;color:var(--navy-950);margin-top:10px}
+.sv-card .amt small{font-size:17px;font-weight:600;color:var(--ink-3)}
+.sv-card ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink-2)}
+.sv-card.us ul{border-color:var(--green-100)}
+.sv-total{max-width:880px;margin:22px auto 0;background:var(--navy-950);color:#fff;border-radius:var(--radius-lg);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sv-total .big-save{font-family:'Instrument Serif';font-style:italic;font-size:44px;color:var(--green-400);line-height:1}
+.sv-total p{color:rgba(255,255,255,.75);font-size:14.5px;max-width:38ch}
+
+/* Purchase toast */
+.toast{position:fixed;left:16px;bottom:84px;z-index:70;background:#fff;border:1px solid var(--line-2);border-radius:14px;box-shadow:var(--shadow-lg);padding:12px 16px 12px 12px;display:flex;gap:11px;align-items:center;max-width:320px;transform:translateX(-120%);transition:transform .45s cubic-bezier(.2,.9,.3,1.2);pointer-events:none}
+.toast.show{transform:translateX(0)}
+.toast .av{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;flex:none}
+.toast .tx{font-size:13px;line-height:1.35;color:var(--ink-2)}
+.toast .tx b{color:var(--navy-950)}
+.toast .tx small{display:block;color:var(--ink-3);font-size:11px;margin-top:2px}
+@media (max-width:560px){.toast{bottom:78px;max-width:280px}}
+
+/* Awards */
+.awards{padding:64px 0;background:var(--navy-950)}
+.awards-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:860px){.awards-row{grid-template-columns:1fr 1fr}}
+.award{text-align:center;color:#fff;padding:28px 16px;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);background:rgba(255,255,255,.04)}
+.award .laurel{width:110px;margin:0 auto 10px;color:#E8C55F}
+.award b{font-size:15px;line-height:1.3;display:block;letter-spacing:-.01em}
+.award small{display:block;margin-top:6px;font-size:11.5px;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+/* Reasons */
+.reasons{padding:88px 0;background:#fff}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-600)}
+.sec-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:700;margin-top:12px;line-height:1.1}
+.sec-head p{margin-top:14px;font-size:16.5px}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:860px){.reason-grid{grid-template-columns:1fr}}
+.reason{padding:32px 28px;border-radius:var(--radius-lg);background:var(--navy-50);border:1px solid var(--line-2)}
+.reason .big{font-family:'Instrument Serif';font-style:italic;font-size:52px;color:var(--green-600);line-height:1}
+.reason h3{font-size:19px;margin-top:14px}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.proof-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.proof-grid{grid-template-columns:1fr}}
+.reason p{font-size:14.5px;margin-top:8px}
+
+/* Offer */
+.offer{padding:88px 0;background:linear-gradient(180deg,var(--cream),#fff)}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:0 auto}
+@media (max-width:760px){.pack-grid{grid-template-columns:1fr}}
+.pack{position:relative;background:#fff;border:2px solid var(--line);border-radius:var(--radius-lg);padding:36px 32px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;text-align:center}
+.pack:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pack.selected{border-color:var(--green-500);box-shadow:0 20px 44px -18px rgba(59,154,112,.4)}
+.pack .flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green-500);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.pack img{width:62%;margin:0 auto 18px;filter:drop-shadow(0 16px 24px rgba(14,30,55,.2))}
+.pack .qty{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.pack h3{font-size:24px;margin-top:6px}
+.pack .price{margin-top:14px;display:flex;align-items:baseline;justify-content:center;gap:10px}
+.pack .price .rm{font-size:40px;font-weight:800;color:var(--navy-950);letter-spacing:-.02em}
+.pack .price .was{font-size:16px;color:var(--ink-3);text-decoration:line-through}
+.pack .per{font-size:13px;color:var(--green-600);font-weight:700;margin-top:2px}
+.pack ul{list-style:none;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line-2);display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--ink-2);text-align:left}
+.pack ul li{display:flex;gap:9px;align-items:flex-start}
+.pack ul svg{color:var(--green-500);flex:none;margin-top:3px}
+.pack .pick{margin-top:22px}
+.ship-bar{max-width:880px;margin:26px auto 0;background:var(--green-50);border:1px solid var(--green-100);border-radius:var(--radius);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:600;color:var(--green-600);text-align:center}
+
+/* Proof */
+.proof{padding:88px 0;background:var(--navy-950);color:#fff}
+.proof .sec-head h2{color:#fff}
+.proof .sec-head p{color:rgba(255,255,255,.7)}
+.quote{background:var(--navy-900);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:26px}
+.quote .stars{color:#F5A524;font-size:15px;letter-spacing:1px}
+.quote p{color:rgba(255,255,255,.85);font-size:14.5px;margin-top:12px;font-weight:500}
+.quote .who{margin-top:16px;font-size:13px;color:rgba(255,255,255,.55)}
+
+/* FAQ */
+.faq{padding:88px 0;background:#fff}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{border:1px solid var(--line-2);border-radius:var(--radius);overflow:hidden}
+.faq-item summary{padding:18px 22px;font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--navy-950)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px;color:var(--ink-3);font-weight:400}
+.faq-item[open] summary::after{content:"−"}
+.faq-item .a{padding:0 22px 18px;font-size:14.5px;color:var(--ink-2)}
+
+/* Sticky buy bar */
+.buybar{position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line-2);padding:12px 0;transform:translateY(110%);transition:transform .3s ease}
+.buybar.show{transform:translateY(0)}
+.buybar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.buybar .info{font-size:14px;font-weight:700;color:var(--navy-950)}
+.buybar .info small{display:block;font-weight:500;color:var(--ink-3);font-size:12px}
+
+footer{background:var(--navy-950);color:rgba(255,255,255,.6);padding:48px 0 96px;font-size:13.5px}
+.foot-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer a{color:rgba(255,255,255,.75)}
+footer a:hover{color:#fff}
+
+/* ===== Checkout overlay ===== */
+.checkout{position:fixed;inset:0;z-index:100;background:rgba(10,22,40,.55);backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center}
+@media (min-width:720px){.checkout{align-items:center}}
+.checkout.open{display:flex}
+.co-panel{background:#fff;width:min(100%,520px);max-height:92vh;overflow-y:auto;border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:28px 28px 34px;position:relative}
+@media (min-width:720px){.co-panel{border-radius:var(--radius-lg)}}
+.co-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:999px;background:var(--navy-50);color:var(--navy-900);display:grid;place-items:center}
+.co-steps{display:flex;gap:8px;margin-bottom:24px;align-items:center;padding-right:44px}
+.co-step{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ink-3)}
+.co-step .d{width:24px;height:24px;border-radius:999px;background:var(--navy-50);border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
+.co-step.active{color:var(--navy-950)}
+.co-step.active .d{background:var(--navy-900);color:#fff;border-color:var(--navy-900)}
+.co-step.done .d{background:var(--green-500);color:#fff;border-color:var(--green-500)}
+.co-sep{flex:1;height:1px;background:var(--line)}
+.co-panel h2{font-size:22px;margin-bottom:6px}
+.co-panel .sub{font-size:14px;color:var(--ink-3);margin-bottom:22px}
+.co-screen{display:none}
+.co-screen.active{display:block}
+
+.order-line{display:flex;justify-content:space-between;font-size:14.5px;padding:10px 0;color:var(--ink-2)}
+.order-line b{color:var(--navy-950)}
+.order-line.total{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;font-size:16px}
+.order-line.total b{font-size:22px;font-weight:800}
+.order-line .free{color:var(--green-600);font-weight:700}
+.co-pack-switch{display:flex;gap:10px;margin-bottom:18px}
+.co-pack-switch button{flex:1;padding:14px;border:2px solid var(--line);border-radius:var(--radius);text-align:center;font-weight:700;font-size:14px;transition:border-color .15s}
+.co-pack-switch button.on{border-color:var(--green-500);background:var(--green-50)}
+.co-pack-switch small{display:block;font-weight:600;color:var(--ink-3);font-size:12px;margin-top:2px}
+.co-pack-switch button.on small{color:var(--green-600)}
+.ship-nudge{background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;border-radius:10px;padding:11px 14px;font-size:13px;font-weight:600;margin-top:12px}
+.ship-nudge.ok{background:var(--green-50);border-color:var(--green-100);color:var(--green-600)}
+
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.paygrid button{border:2px solid var(--line);border-radius:var(--radius);padding:16px 14px;display:flex;align-items:center;gap:11px;font-weight:700;font-size:14px;text-align:left;transition:border-color .15s}
+.paygrid button.on{border-color:var(--navy-900);background:var(--navy-50)}
+.paygrid .pm-ico{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;flex:none;font-size:10px;font-weight:800;color:#fff}
+.paygrid small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-3)}
+.field{margin-top:14px}
+.field label{display:block;font-size:12.5px;font-weight:700;color:var(--navy-950);margin-bottom:6px}
+.field input,.field select{width:100%;height:48px;border:1.5px solid var(--line);border-radius:10px;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff;outline:none;transition:border-color .15s}
+.field input:focus,.field select:focus{border-color:var(--navy-900)}
+.field-row{display:flex;gap:10px}
+.field-row .field{flex:1}
+.secure-note{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;color:var(--ink-3);margin-top:14px}
+.paid-banner{background:var(--green-50);border:1px solid var(--green-100);border-radius:var(--radius);padding:16px 18px;display:flex;gap:12px;align-items:center;margin-bottom:20px}
+.paid-banner .tick{width:38px;height:38px;border-radius:999px;background:var(--green-500);color:#fff;display:grid;place-items:center;flex:none}
+.paid-banner b{color:var(--green-600);font-size:15px;display:block}
+.paid-banner small{color:var(--ink-2);font-size:12.5px}
+.done-hero{text-align:center;padding:12px 0 6px}
+.done-hero .tick{width:64px;height:64px;border-radius:999px;background:var(--green-500);color:#fff;display:grid;place-items:center;margin:0 auto 18px;animation:pop .4s ease}
+@keyframes pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.done-hero h2{font-size:24px}
+.done-hero p{font-size:14.5px;margin-top:8px}
+.done-order{background:var(--navy-50);border-radius:var(--radius);padding:18px 20px;margin-top:22px;font-size:14px;text-align:left}
+.done-order .row{display:flex;justify-content:space-between;padding:5px 0;color:var(--ink-2)}
+.done-order b{color:var(--navy-950)}
+
+/* ===== Mobile polish ===== */
+@media (max-width:600px){
+  .wrap{padding:0 18px}
+  .hero{min-height:auto}
+  .hero-content{padding:64px 0 72px}
+  .hero p{font-size:16px}
+  .hero-cta .btn{width:100%}
+  .hero-cta .micro{width:100%;text-align:center}
+  .reasons,.offer,.proof,.faq,.savings,.petshops{padding:56px 0}
+  .sec-head{margin-bottom:36px}
+  .awards{padding:44px 0}
+  .awards-row{gap:10px}
+  .award{padding:20px 10px}
+  .award .laurel{width:84px}
+  .award b{font-size:13px}
+  .petshop-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .reason{padding:24px 20px}
+  .reason .big{font-size:42px}
+  .pack{padding:28px 20px}
+  .pack .price .rm{font-size:34px}
+  .sv-card{padding:26px 20px}
+  .sv-card .amt{font-size:36px}
+  .sv-photo{height:180px}
+  .sv-photo img,.sv-photo img.bx{height:160px}
+  .sv-vs{width:72px;height:72px;font-size:24px}
+  .sv-total{padding:24px 20px;text-align:center;justify-content:center}
+  .sv-total .btn{width:100%}
+  .quote{padding:20px}
+  .buybar-inner{gap:10px}
+  .buybar .info{font-size:12.5px}
+  .buybar .info small{font-size:11px}
+  .buybar .btn{height:44px;padding:0 18px;font-size:14px}
+  .co-panel{padding:22px 18px 28px;max-height:94vh}
+  .paygrid{grid-template-columns:1fr}
+  .field input,.field select{font-size:16px}
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:14px}
+  footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#">Sanking</a>
+    <div class="nav-right">
+      <span class="ship-note">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>FREE shipping above RM50</span>
+      </span>
+      <button class="btn btn-dark" style="height:40px;padding:0 18px;font-size:13.5px" onclick="openCheckout(3)">Buy Now</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="vid-fallback"></div>
+  <video id="hero-video" autoplay muted loop playsinline style="display:none"></video>
+  <div class="wrap" style="width:100%">
+    <div class="hero-content">
+      <h1>Your home shouldn't smell like a litter box. <span class="accent">Ever.</span></h1>
+      <p>Sanking Carbon Fine Bentonite locks odour in 3 seconds, clumps rock-solid, and is 99% dust-free. Trusted by 100,000+ Malaysian cat owners.</p>
+      <div class="hero-badges">
+        <span class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>3-second clumping</span>
+        <span class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>99% dust-free</span>
+        <span class="hero-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Anti-bacterial</span>
+      </div>
+      <div class="hero-cta">
+        <button class="btn btn-green" onclick="document.getElementById('offer').scrollIntoView2()">Shop Now — from RM25</button>
+        <span class="micro">★ 4.8 · 2,400+ verified reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- REASONS TO BUY -->
+<section class="reasons">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why 100,000+ cat owners switched</span>
+      <h2>Three problems? <span class="serif">Six, solved for good.</span></h2>
+    </div>
+    <div class="reason-grid">
+      <div class="reason">
+        <div class="big">3s</div>
+        <h3>The smell stops today</h3>
+        <p>Activated carbon neutralises ammonia on contact. Urine clumps rock-solid in 3 seconds — scoop it out, smell gone. Guests will never know you have a cat.</p>
+      </div>
+      <div class="reason">
+        <div class="big">99%</div>
+        <h3>No more dust clouds</h3>
+        <p>Fine-grain bentonite with 99% less dust. Safe for asthmatic cats, kittens — and your lungs. No white powder on your floor or furniture.</p>
+      </div>
+      <div class="reason">
+        <div class="big">RM23<span style="font-size:24px">/mo</span></div>
+        <h3>Cheaper than every "premium" brand</h3>
+        <p>Factory-direct import — no middlemen markup. One 10L bag lasts a single cat a full month. Premium quality at pasar-friendly prices.</p>
+      </div>
+      <div class="reason">
+        <div class="big">0</div>
+        <h3>Zero tracking outside the box</h3>
+        <p>Heavier fine granules don't stick to paws or fly when your cat digs. No more litter trail across the bedroom floor every morning.</p>
+      </div>
+      <div class="reason">
+        <div class="big">2×</div>
+        <h3>Lasts twice as long</h3>
+        <p>Only the soiled clump hardens — the rest of the litter stays clean and usable. You throw away less and top up less. One bag stretches further.</p>
+      </div>
+      <div class="reason">
+        <div class="big">24h</div>
+        <h3>Never carry heavy bags again</h3>
+        <p>Ships from Shah Alam within 24 hours, straight to your door. No lugging 10kg bags from the pet store car park ever again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <div class="wrap">
+    <div class="awards-row">
+      <div class="award">
+        <div class="laurel">
+          <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M28 14 C18 24 14 42 22 58 M22 22 c-6 1 -10 -2 -11 -8 c6 -1 10 2 11 8z M17 34 c-6 0 -10 -4 -10 -10 c6 0 10 4 10 10z M16 46 c-6 -1 -9 -6 -8 -12 c6 1 9 6 8 12z M19 58 c-6 -2 -8 -8 -6 -13 c6 2 8 7 6 13z"/><path d="M92 14 C102 24 106 42 98 58 M98 22 c6 1 10 -2 11 -8 c-6 -1 -10 2 -11 8z M103 34 c6 0 10 -4 10 -10 c-6 0 -10 4 -10 10z M104 46 c6 -1 9 -6 8 -12 c-6 1 -9 6 -8 12z M101 58 c6 -2 8 -8 6 -13 c-6 2 -8 7 -6 13z"/><path d="M60 12 l4.9 9.9 11 1.6 -8 7.7 1.9 10.9 -9.8 -5.2 -9.8 5.2 1.9 -10.9 -8 -7.7 11 -1.6z" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <b>Best Cat Litter<br/>in Malaysia</b>
+        <small>Pet Retail Awards 2025</small>
+      </div>
+      <div class="award">
+        <div class="laurel">
+          <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M28 14 C18 24 14 42 22 58 M22 22 c-6 1 -10 -2 -11 -8 c6 -1 10 2 11 8z M17 34 c-6 0 -10 -4 -10 -10 c6 0 10 4 10 10z M16 46 c-6 -1 -9 -6 -8 -12 c6 1 9 6 8 12z M19 58 c-6 -2 -8 -8 -6 -13 c6 2 8 7 6 13z"/><path d="M92 14 C102 24 106 42 98 58 M98 22 c6 1 10 -2 11 -8 c-6 -1 -10 2 -11 8z M103 34 c6 0 10 -4 10 -10 c-6 0 -10 4 -10 10z M104 46 c6 -1 9 -6 8 -12 c-6 1 -9 6 -8 12z M101 58 c6 -2 8 -8 6 -13 c-6 2 -8 7 -6 13z"/><text x="60" y="46" text-anchor="middle" font-size="26" font-weight="800" fill="currentColor" stroke="none" font-family="Manrope">#1</text></svg>
+        </div>
+        <b>Most-Sold Premium<br/>Cat Litter</b>
+        <small>Shopee Mall · Pet Category</small>
+      </div>
+      <div class="award">
+        <div class="laurel">
+          <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M28 14 C18 24 14 42 22 58 M22 22 c-6 1 -10 -2 -11 -8 c6 -1 10 2 11 8z M17 34 c-6 0 -10 -4 -10 -10 c6 0 10 4 10 10z M16 46 c-6 -1 -9 -6 -8 -12 c6 1 9 6 8 12z M19 58 c-6 -2 -8 -8 -6 -13 c6 2 8 7 6 13z"/><path d="M92 14 C102 24 106 42 98 58 M98 22 c6 1 10 -2 11 -8 c-6 -1 -10 2 -11 8z M103 34 c6 0 10 -4 10 -10 c-6 0 -10 4 -10 10z M104 46 c6 -1 9 -6 8 -12 c-6 1 -9 6 -8 12z M101 58 c6 -2 8 -8 6 -13 c-6 2 -8 7 -6 13z"/><text x="60" y="46" text-anchor="middle" font-size="22" font-weight="800" fill="currentColor" stroke="none" font-family="Manrope">4.8★</text></svg>
+        </div>
+        <b>Top-Rated by<br/>Cat Owners</b>
+        <small>2,400+ verified reviews</small>
+      </div>
+      <div class="award">
+        <div class="laurel">
+          <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M28 14 C18 24 14 42 22 58 M22 22 c-6 1 -10 -2 -11 -8 c6 -1 10 2 11 8z M17 34 c-6 0 -10 -4 -10 -10 c6 0 10 4 10 10z M16 46 c-6 -1 -9 -6 -8 -12 c6 1 9 6 8 12z M19 58 c-6 -2 -8 -8 -6 -13 c6 2 8 7 6 13z"/><path d="M92 14 C102 24 106 42 98 58 M98 22 c6 1 10 -2 11 -8 c-6 -1 -10 2 -11 8z M103 34 c6 0 10 -4 10 -10 c-6 0 -10 4 -10 10z M104 46 c6 -1 9 -6 8 -12 c-6 1 -9 6 -8 12z M101 58 c6 -2 8 -8 6 -13 c-6 2 -8 7 -6 13z"/><text x="60" y="46" text-anchor="middle" font-size="20" font-weight="800" fill="currentColor" stroke="none" font-family="Manrope">100K</text></svg>
+        </div>
+        <b>100,000+ Cats<br/>Served Nationwide</b>
+        <small>Since 2016</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PETSHOPS -->
+<section class="petshops">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:36px">
+      <span class="eyebrow">Recommended by petshops nationwide</span>
+      <h2 style="font-size:clamp(24px,3vw,34px)">Stocked and recommended by <span class="serif">the shops that know cats.</span></h2>
+    </div>
+    <div class="petshop-grid" id="petshop-grid"></div>
+    <p style="text-align:center;margin-top:24px;color:var(--ink-3);font-size:13.5px">350+ independent petshops across Malaysia stock Sanking</p>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Choose your pack</span>
+      <h2>Simple pricing. <span class="serif">No math needed.</span></h2>
+      <p>One bag to try it, or three to never run out — and unlock free shipping.</p>
+    </div>
+    <div class="pack-grid">
+      <div class="pack" id="pack-1" onclick="openCheckout(1)">
+        <img src="img/7l-mockup.png" alt="Sanking 10L — 1 bag" />
+        <div class="qty">Single bag</div>
+        <h3>Try Sanking</h3>
+        <div class="price"><span class="rm">RM25</span></div>
+        <div class="per">1 × 10L bag</div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 month supply for 1 cat</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Perfect for first-timers</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>+ RM8 shipping</li>
+        </ul>
+        <button class="btn btn-ghost btn-block pick">Choose 1 Bag</button>
+      </div>
+      <div class="pack selected" id="pack-3" onclick="openCheckout(3)">
+        <span class="flag">Most popular · Save RM6</span>
+        <img src="img/combo-mockup.png" alt="Sanking 10L — 3 bags bundle" />
+        <div class="qty">Bundle of 3</div>
+        <h3>Stock Up & Save</h3>
+        <div class="price"><span class="rm">RM69</span><span class="was">RM75</span></div>
+        <div class="per">RM23 per bag · 3 × 10L</div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>3 months supply for 1 cat</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><b style="color:var(--green-600)">FREE shipping (above RM50)</b></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Never run out mid-month</li>
+        </ul>
+        <button class="btn btn-green btn-block pick">Choose 3 Bags</button>
+      </div>
+    </div>
+    <div class="ship-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Orders above RM50 ship FREE nationwide · Everything else RM8 flat
+    </div>
+  </div>
+</section>
+
+<!-- SAVINGS -->
+<section class="savings">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Do the math</span>
+      <h2>Every month you wait <span class="serif">costs you money.</span></h2>
+      <p>Compare what most cat owners pay for a "premium" brand vs switching to Sanking today.</p>
+    </div>
+    <div class="sv-grid">
+      <div class="sv-vs">VS</div>
+      <div class="sv-card them">
+        <div class="sv-photo">
+          <img class="bx" src="img/brandx.png" alt="Generic premium cat litter brand" />
+          <span class="ribbon">The other guys</span>
+        </div>
+        <span class="lbl">Typical premium brand</span>
+        <div class="amt">RM45<small>/month</small></div>
+        <ul>
+          <li>✗ RM540 a year on litter</li>
+          <li>✗ Pay for the brand name, not the clump</li>
+          <li>✗ Still lugging bags from the store</li>
+        </ul>
+      </div>
+      <div class="sv-card us">
+        <div class="sv-photo">
+          <img src="img/7l-mockup.png" alt="Sanking Minerals Clumping Cat Litter" />
+          <span class="ribbon">Sanking</span>
+        </div>
+        <span class="lbl">Sanking 3-bag bundle</span>
+        <div class="amt">RM23<small>/month</small></div>
+        <ul>
+          <li>✓ RM276 a year — same premium clumping</li>
+          <li>✓ Factory-direct, no middlemen markup</li>
+          <li>✓ Free shipping to your door</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sv-total">
+      <div>
+        <div class="big-save">Save RM264 a year</div>
+        <p>That's a year of premium litter for your second cat — or a very nice dinner every month. Start saving with your first bundle today.</p>
+      </div>
+      <button class="btn btn-green" onclick="openCheckout(3)">Start saving — 3 for RM69</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--green-400)">Verified reviews</span>
+      <h2>4.8 stars. 2,400+ reviews. <span class="serif">Zero regrets.</span></h2>
+    </div>
+    <div class="proof-grid">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"3 cats, zero smell. The clumping is insane — no crumbles when scooping. Repeat order dah 5 kali!"</p>
+        <div class="who">Fadhli K. · Shah Alam · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"No dust clouds when pouring — huge deal for my asthmatic cat. Been using 6 months, won't switch."</p>
+        <div class="who">Mei Ling C. · Penang · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"The 3-bag bundle is a no-brainer. Free shipping and I never run out. My apartment finally smells like home."</p>
+        <div class="who">Nurul H. · Kuala Lumpur · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Memang terbaik. Clumping kuat, tak berhabuk, bau pun takde. Kucing saya pun suka texture dia."</p>
+        <div class="who">Aiman R. · Johor Bahru · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"I run a small cattery with 12 cats. Sanking is the only litter that keeps up — and the bulk pricing helps a lot."</p>
+        <div class="who">Iqbal F. · Klang · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"My picky Persian went straight to it, zero transition. First litter she hasn't rejected in 2 years."</p>
+        <div class="who">Serena L. · Petaling Jaya · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"As a vet I recommend Sanking to all my new-kitten clients. Low dust, anti-bacterial, safe formula."</p>
+        <div class="who">Dr. Tan · Subang Jaya · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Tiger is 14kg and digs like an excavator. Zero litter outside the box. If it handles him, it handles anything."</p>
+        <div class="who">Siti A. · Shah Alam · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Order sampai next day! And one bag really does last the whole month. Best value I've found on any platform."</p>
+        <div class="who">Daniel L. · Cheras · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Saya beli untuk mak saya — dia senang angkat sebab tak berat sangat dan senang cuci. Repeat customer!"</p>
+        <div class="who">Farhan M. · Seremban · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Switched from a RM45 'premium' brand. Sanking clumps better at half the price. I honestly feel cheated by the old one."</p>
+        <div class="who">Priya S. · Ipoh · ✓ Verified buyer</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Tried every brand on Shopee. This is the one I keep restocking. The 3-for-RM69 bundle is unbeatable."</p>
+        <div class="who">Adeline W. · Cyberjaya · ✓ Verified buyer</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;color:rgba(255,255,255,.55);font-size:13.5px">+ 2,388 more verified reviews on Shopee & Lazada</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you ask —</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How long does one 10L bag last?</summary><div class="a">About one month for a single cat with daily scooping. Multi-cat homes: roughly 2 weeks per bag — that's why most customers take the 3-bag bundle.</div></details>
+      <details class="faq-item"><summary>Will my cat accept it?</summary><div class="a">Fine-grain bentonite has a natural sand texture cats instinctively prefer. Most cats switch with zero transition. If yours is fussy, mix 50/50 with the old litter for 2-3 days.</div></details>
+      <details class="faq-item"><summary>How fast is delivery?</summary><div class="a">Orders ship within 24 hours from our Shah Alam warehouse. West Malaysia: 1-3 working days. East Malaysia: 3-5 working days.</div></details>
+      <details class="faq-item"><summary>What payment methods do you accept?</summary><div class="a">FPX online banking, credit/debit card, Touch 'n Go eWallet, and GrabPay. All payments are processed securely.</div></details>
+      <details class="faq-item"><summary>What if I'm not satisfied?</summary><div class="a">Contact us within 7 days of delivery and we'll make it right — replacement or refund, no drama. WhatsApp +6010-932 0118.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="logo" style="color:#fff">Sanking</div>
+    <span>MDL Distribution Sdn Bhd · Shah Alam, Selangor · <a href="tel:+60109320118">+6010-932 0118</a> · <a href="mailto:enquiry@mdl.com.my">enquiry@mdl.com.my</a></span>
+    <span>© 2026 Sanking. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- STICKY BUY BAR -->
+<div class="buybar" id="buybar">
+  <div class="wrap buybar-inner">
+    <div class="info">Sanking 10L — 1 for RM25 · 3 for RM69<small>Free shipping on orders above RM50</small></div>
+    <button class="btn btn-green" onclick="openCheckout(3)">Buy Now</button>
+  </div>
+</div>
+
+<!-- PURCHASE TOAST -->
+<div class="toast" id="toast" aria-hidden="true">
+  <span class="av" id="toast-av">A</span>
+  <span class="tx" id="toast-tx"></span>
+</div>
+
+<!-- ===== CHECKOUT ===== -->
+<div class="checkout" id="checkout" aria-hidden="true">
+  <div class="co-panel">
+    <button class="co-close" onclick="closeCheckout()" aria-label="Close">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="co-steps">
+      <div class="co-step" id="st-1"><span class="d">1</span>Order</div>
+      <div class="co-sep"></div>
+      <div class="co-step" id="st-2"><span class="d">2</span>Pay</div>
+      <div class="co-sep"></div>
+      <div class="co-step" id="st-3"><span class="d">3</span>Delivery</div>
+    </div>
+
+    <!-- STEP 1: Order summary -->
+    <div class="co-screen" id="sc-1">
+      <h2>Your order</h2>
+      <p class="sub">Switch packs anytime — no cart needed.</p>
+      <div class="co-pack-switch">
+        <button id="sw-1" onclick="setPack(1)">1 bag<small>RM25</small></button>
+        <button id="sw-3" onclick="setPack(3)">3 bags<small>RM69 · save RM6</small></button>
+      </div>
+      <div class="order-line"><span id="ol-item">Sanking 10L × 3</span><b id="ol-price">RM69.00</b></div>
+      <div class="order-line"><span>Shipping</span><b id="ol-ship" class="free">FREE</b></div>
+      <div class="order-line total"><span>Total</span><b id="ol-total">RM69.00</b></div>
+      <div class="ship-nudge" id="nudge"></div>
+      <button class="btn btn-dark btn-block" style="margin-top:20px" onclick="goStep(2)">Continue to payment</button>
+      <div class="secure-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Secure checkout · Pay first, fill delivery address after
+      </div>
+    </div>
+
+    <!-- STEP 2: Payment -->
+    <div class="co-screen" id="sc-2">
+      <h2>Payment</h2>
+      <p class="sub">Total to pay: <b id="pay-total" style="color:var(--navy-950)">RM69.00</b></p>
+      <div class="paygrid">
+        <button id="pm-fpx" class="on" onclick="setPay('fpx')"><span class="pm-ico" style="background:#1B4A8A">FPX</span><span>Online Banking<small>Maybank, CIMB, +12 banks</small></span></button>
+        <button id="pm-card" onclick="setPay('card')"><span class="pm-ico" style="background:var(--navy-900)">💳</span><span>Card<small>Visa / Mastercard</small></span></button>
+        <button id="pm-tng" onclick="setPay('tng')"><span class="pm-ico" style="background:#005ABE">TNG</span><span>Touch 'n Go<small>eWallet</small></span></button>
+        <button id="pm-grab" onclick="setPay('grab')"><span class="pm-ico" style="background:#00B14F">G</span><span>GrabPay<small>eWallet</small></span></button>
+      </div>
+      <div id="pay-fields"></div>
+      <button class="btn btn-green btn-block" style="margin-top:22px" id="pay-btn" onclick="doPay()">Pay <span id="pay-amt">RM69.00</span></button>
+      <div class="secure-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        256-bit encrypted · You'll fill your delivery address next
+      </div>
+    </div>
+
+    <!-- STEP 3: Address (after payment) -->
+    <div class="co-screen" id="sc-3">
+      <div class="paid-banner">
+        <span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span><b>Payment received!</b><small>Your order is reserved. Now tell us where to send it.</small></span>
+      </div>
+      <h2>Delivery details</h2>
+      <p class="sub">Ships within 24 hours from Shah Alam.</p>
+      <div class="field"><label>Full name</label><input id="f-name" placeholder="e.g. Nur Aisyah binti Ahmad" autocomplete="name" /></div>
+      <div class="field"><label>Phone (for courier)</label><input id="f-phone" placeholder="e.g. 012-345 6789" inputmode="tel" autocomplete="tel" /></div>
+      <div class="field"><label>Address</label><input id="f-addr1" placeholder="Unit / street address" autocomplete="address-line1" /></div>
+      <div class="field-row">
+        <div class="field"><label>Postcode</label><input id="f-post" placeholder="40460" inputmode="numeric" maxlength="5" autocomplete="postal-code" /></div>
+        <div class="field"><label>State</label><select id="f-state"><option value="">Select…</option><option>Selangor</option><option>Kuala Lumpur</option><option>Johor</option><option>Penang</option><option>Perak</option><option>Negeri Sembilan</option><option>Melaka</option><option>Pahang</option><option>Kedah</option><option>Kelantan</option><option>Terengganu</option><option>Perlis</option><option>Putrajaya</option><option>Sabah</option><option>Sarawak</option><option>Labuan</option></select></div>
+      </div>
+      <button class="btn btn-dark btn-block" style="margin-top:22px" onclick="doComplete()">Confirm delivery address</button>
+    </div>
+
+    <!-- STEP 4: Done -->
+    <div class="co-screen" id="sc-4">
+      <div class="done-hero">
+        <span class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h2>Order confirmed!</h2>
+        <p>We've sent a receipt to your phone. Your Sanking ships within 24 hours.</p>
+        <div class="done-order">
+          <div class="row"><span>Order</span><b id="done-id">#SK-2026-0001</b></div>
+          <div class="row"><span>Items</span><b id="done-items">Sanking 10L × 3</b></div>
+          <div class="row"><span>Paid</span><b id="done-paid">RM69.00</b></div>
+          <div class="row"><span>Deliver to</span><b id="done-to">—</b></div>
+          <div class="row"><span>Estimated arrival</span><b id="done-eta">1–3 working days</b></div>
+        </div>
+        <button class="btn btn-green btn-block" style="margin-top:22px" onclick="closeCheckout()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Pricing logic ----
+const PRICE = {1:25, 3:69};
+const SHIP_FLAT = 8, FREE_ABOVE = 50;
+let pack = 3, payMethod = 'fpx';
+const fmt = n => 'RM' + n.toFixed(2);
+function calc(){
+  const sub = PRICE[pack];
+  const ship = sub >= FREE_ABOVE ? 0 : SHIP_FLAT;
+  return {sub, ship, total: sub + ship};
+}
+function renderOrder(){
+  const {sub, ship, total} = calc();
+  document.getElementById('ol-item').textContent = `Sanking 10L × ${pack}`;
+  document.getElementById('ol-price').textContent = fmt(sub);
+  const olShip = document.getElementById('ol-ship');
+  olShip.textContent = ship === 0 ? 'FREE' : fmt(ship);
+  olShip.className = ship === 0 ? 'free' : '';
+  document.getElementById('ol-total').textContent = fmt(total);
+  document.getElementById('pay-total').textContent = fmt(total);
+  document.getElementById('pay-amt').textContent = fmt(total);
+  document.getElementById('sw-1').className = pack === 1 ? 'on' : '';
+  document.getElementById('sw-3').className = pack === 3 ? 'on' : '';
+  const nudge = document.getElementById('nudge');
+  if(ship === 0){
+    nudge.className = 'ship-nudge ok';
+    nudge.innerHTML = '🎉 You unlocked <b>FREE shipping</b>' + (pack === 3 ? ' and saved RM6 vs buying separately.' : '.');
+  } else {
+    nudge.className = 'ship-nudge';
+    nudge.innerHTML = `Switch to 3 bags → save RM6 <b>and</b> get free shipping (you save ${fmt(75 - 69 + SHIP_FLAT)} total).`;
+  }
+  // sync pack cards on page
+  document.getElementById('pack-1').classList.toggle('selected', pack === 1);
+  document.getElementById('pack-3').classList.toggle('selected', pack === 3);
+}
+function setPack(p){ pack = p; renderOrder(); }
+
+// ---- Checkout flow ----
+const co = document.getElementById('checkout');
+function openCheckout(p){
+  if(p) pack = p;
+  renderOrder();
+  goStep(1);
+  co.classList.add('open');
+  co.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeCheckout(){
+  co.classList.remove('open');
+  co.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+function goStep(n){
+  [1,2,3,4].forEach(i => {
+    const sc = document.getElementById('sc-' + i);
+    if(sc) sc.classList.toggle('active', i === n);
+  });
+  [1,2,3].forEach(i => {
+    const st = document.getElementById('st-' + i);
+    st.className = 'co-step' + (i === Math.min(n,3) ? ' active' : (i < n ? ' done' : ''));
+  });
+  if(n === 2) setPay(payMethod);
+  co.querySelector('.co-panel').scrollTop = 0;
+}
+
+// ---- Payment ----
+function setPay(m){
+  payMethod = m;
+  ['fpx','card','tng','grab'].forEach(k => document.getElementById('pm-' + k).classList.toggle('on', k === m));
+  const f = document.getElementById('pay-fields');
+  if(m === 'card'){
+    f.innerHTML = `
+      <div class="field"><label>Card number</label><input placeholder="1234 5678 9012 3456" inputmode="numeric" autocomplete="cc-number" /></div>
+      <div class="field-row">
+        <div class="field"><label>Expiry</label><input placeholder="MM/YY" inputmode="numeric" autocomplete="cc-exp" /></div>
+        <div class="field"><label>CVC</label><input placeholder="123" inputmode="numeric" maxlength="4" autocomplete="cc-csc" /></div>
+      </div>`;
+  } else if(m === 'fpx'){
+    f.innerHTML = `<div class="field"><label>Select your bank</label><select><option>Maybank2u</option><option>CIMB Clicks</option><option>Public Bank</option><option>RHB Now</option><option>Hong Leong Connect</option><option>Bank Islam</option><option>AmOnline</option><option>Bank Rakyat</option><option>BSN</option><option>OCBC</option><option>UOB</option><option>Affin Bank</option></select></div>`;
+  } else {
+    f.innerHTML = `<div class="field" style="text-align:center;padding:10px 0;color:var(--ink-3);font-size:13.5px">You'll be redirected to ${m === 'tng' ? "Touch 'n Go" : 'GrabPay'} to approve the payment.</div>`;
+  }
+}
+function doPay(){
+  const btn = document.getElementById('pay-btn');
+  btn.disabled = true;
+  btn.textContent = 'Processing…';
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = 'Pay <span id="pay-amt"></span>';
+    goStep(3);
+    renderOrder();
+  }, 1400);
+}
+
+// ---- Address after payment ----
+function doComplete(){
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const addr = document.getElementById('f-addr1').value.trim();
+  const post = document.getElementById('f-post').value.trim();
+  const state = document.getElementById('f-state').value;
+  if(!name || !phone || !addr || !post || !state){
+    alert('Please fill in all delivery fields so the courier can find you.');
+    return;
+  }
+  const {total} = calc();
+  document.getElementById('done-id').textContent = '#SK-2026-' + String(Math.floor(1000 + Math.random() * 9000));
+  document.getElementById('done-items').textContent = `Sanking 10L × ${pack}`;
+  document.getElementById('done-paid').textContent = fmt(total);
+  document.getElementById('done-to').textContent = `${name}, ${state}`;
+  document.getElementById('done-eta').textContent = ['Sabah','Sarawak','Labuan'].includes(state) ? '3–5 working days' : '1–3 working days';
+  goStep(4);
+  [1,2,3].forEach(i => document.getElementById('st-' + i).className = 'co-step done');
+}
+
+// ---- Misc UI ----
+// smooth scroll helper (avoid scrollIntoView)
+Element.prototype.scrollIntoView2 = function(){
+  const y = this.getBoundingClientRect().top + window.scrollY - 70;
+  window.scrollTo({top: y, behavior: 'smooth'});
+};
+// sticky buy bar after offer section scrolled past hero
+const buybar = document.getElementById('buybar');
+window.addEventListener('scroll', () => {
+  buybar.classList.toggle('show', window.scrollY > window.innerHeight * .8 && !co.classList.contains('open'));
+}, {passive: true});
+// ticker
+const tickerItems = ['<b>★ 4.8</b> from 2,400+ reviews','<b>FREE shipping</b> above RM50','Ships in <b>24 hours</b> from Shah Alam','<b>100,000+</b> Malaysian cat owners','3-second clumping · 99% dust-free','1 bag RM25 · <b>3 bags RM69</b>'];
+document.getElementById('ticker').innerHTML = (tickerItems.join('<span style="opacity:.3">•</span>') + '<span style="opacity:.3">•</span>').repeat(2)
+  .split('•').map(s => `<span>${s}</span>`).join('<span style="opacity:.3">·</span>');
+// hero video — src injected once generated
+const HERO_VIDEO_SRC = 'media/hero-bg.mp4';
+if(HERO_VIDEO_SRC){
+  const v = document.getElementById('hero-video');
+  v.src = HERO_VIDEO_SRC;
+  v.style.display = '';
+}
+// petshop sample logos (replace with real logo <img> when provided)
+const shops = [
+  {n:'Meow Haven', t:'Pet Studio', c:'#2E7D5B', i:'cat'},
+  {n:'PawMart', t:'Petshop · KL', c:'#1B4A8A', i:'paw'},
+  {n:'Kitty Corner', t:'Subang Jaya', c:'#B4541F', i:'cat'},
+  {n:'Furry Tails', t:'Pet Supplies', c:'#6D28D9', i:'paw'},
+  {n:'The Cat Shack', t:'Penang', c:'#0E7490', i:'house'},
+  {n:'Petopia', t:'Mid Valley', c:'#BE185D', i:'heart'},
+  {n:'Si Comel', t:'Kedai Haiwan', c:'#A16207', i:'cat'},
+  {n:'Whisker & Co.', t:'Bangsar', c:'#334155', i:'cat'},
+  {n:'Happy Paws', t:'Johor Bahru', c:'#15803D', i:'paw'},
+  {n:'Cats @ Home', t:'Ipoh', c:'#7C2D12', i:'house'},
+  {n:'Pet Avenue', t:'Kota Kinabalu', c:'#1D4ED8', i:'heart'},
+  {n:'Kucing Mall', t:'Kuching', c:'#9333EA', i:'cat'},
+];
+const icons = {
+  cat:'<path d="M5 19 L5 8 L9 11 L12 6 L15 11 L19 8 L19 19 Z" fill="none" stroke="CLR" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9.5" cy="14" r=".9" fill="CLR"/><circle cx="14.5" cy="14" r=".9" fill="CLR"/>',
+  paw:'<circle cx="8" cy="9" r="1.7" fill="CLR"/><circle cx="12" cy="7.5" r="1.7" fill="CLR"/><circle cx="16" cy="9" r="1.7" fill="CLR"/><path d="M12 11c-2.8 0-4.6 2.1-4.6 4 0 1.4 1 2.3 2.3 2.3 1 0 1.6-.5 2.3-.5s1.3.5 2.3.5c1.3 0 2.3-.9 2.3-2.3 0-1.9-1.8-4-4.6-4z" fill="CLR"/>',
+  house:'<path d="M4 11 L12 4.5 L20 11 V19 H4 Z" fill="none" stroke="CLR" stroke-width="1.8" stroke-linejoin="round"/><circle cx="10" cy="14.5" r=".8" fill="CLR"/><circle cx="14" cy="14.5" r=".8" fill="CLR"/>',
+  heart:'<path d="M12 19.5C7 15.5 4 12.6 4 9.6 4 7.4 5.7 6 7.6 6c1.5 0 2.9.8 4.4 2.5C13.5 6.8 14.9 6 16.4 6 18.3 6 20 7.4 20 9.6c0 3-3 5.9-8 9.9z" fill="CLR"/>'
+};
+document.getElementById('petshop-grid').innerHTML = shops.map(s => `
+  <div class="petshop-logo">
+    <svg viewBox="0 0 24 24">${icons[s.i].replaceAll('CLR', s.c)}</svg>
+    <span class="nm" style="color:${s.c}">${s.n}</span>
+    <span class="tg">${s.t}</span>
+  </div>`).join('');
+
+// live purchase notifications
+const buyers = [
+  ['Aisyah','Shah Alam',3],['Jason','Puchong',3],['Nurul','Kuala Lumpur',1],['Wei Ling','Penang',3],
+  ['Hafiz','Johor Bahru',3],['Priya','Ipoh',1],['Amirul','Klang',3],['Adeline','Cyberjaya',3],
+  ['Farah','Seremban',1],['Daniel','Cheras',3],['Siti','Subang Jaya',3],['Kavitha','Melaka',1],
+  ['Zul','Kuantan',3],['Michelle','Kota Kinabalu',3],['Iman','Kuching',1],['Chong','Petaling Jaya',3]
+];
+const avColors = ['#2E7D5B','#1B4A8A','#B4541F','#6D28D9','#0E7490','#BE185D','#A16207','#334155'];
+const toast = document.getElementById('toast');
+let toastIdx = 0;
+function showToast(){
+  if(co.classList.contains('open')) return; // don't distract during checkout
+  const [name, city, qty] = buyers[toastIdx % buyers.length];
+  const mins = 2 + Math.floor(Math.random() * 28);
+  document.getElementById('toast-av').textContent = name[0];
+  document.getElementById('toast-av').style.background = avColors[toastIdx % avColors.length];
+  document.getElementById('toast-tx').innerHTML = `<b>${name}</b> from ${city} just bought <b>${qty === 3 ? '3 bags (RM69)' : '1 bag (RM25)'}</b><small>${mins} minutes ago · ✓ Verified order</small>`;
+  toast.classList.add('show');
+  toastIdx++;
+  setTimeout(() => toast.classList.remove('show'), 4200);
+}
+setTimeout(showToast, 3500);
+setInterval(showToast, 11000);
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeCheckout(); });
+</script>
+</body>
+</html>
